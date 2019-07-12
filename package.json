@@ -2,6 +2,7 @@
   "name": "kaleidoscope-web-streamer",
   "version": "0.1.0",
   "private": true,
+  "homepage" : "https://staujd02.github.io/kaleidoscope-web-streamer",
   "dependencies": {
     "@types/jest": "24.0.15",
     "@types/node": "12.6.2",
