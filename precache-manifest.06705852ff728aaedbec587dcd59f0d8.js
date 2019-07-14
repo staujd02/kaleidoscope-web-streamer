@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "640abb4062809144de4d249977cb2664",
+    "revision": "f7b562ff99d05e1fb6249aa4ae9bd460",
     "url": "/kaleidoscope-web-streamer/index.html"
   },
   {
-    "revision": "749032e53ad78a87fc9d",
+    "revision": "7c8d6cabfd1544257568",
     "url": "/kaleidoscope-web-streamer/static/css/main.2634d66c.chunk.css"
   },
   {
@@ -12,15 +12,11 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/kaleidoscope-web-streamer/static/js/2.373ccd69.chunk.js"
   },
   {
-    "revision": "749032e53ad78a87fc9d",
-    "url": "/kaleidoscope-web-streamer/static/js/main.f5922f97.chunk.js"
+    "revision": "7c8d6cabfd1544257568",
+    "url": "/kaleidoscope-web-streamer/static/js/main.70daa854.chunk.js"
   },
   {
     "revision": "92b1ab129225c3c60129",
     "url": "/kaleidoscope-web-streamer/static/js/runtime~main.02944634.js"
-  },
-  {
-    "revision": "ee7cd8ed2dcec943251eb2763684fc6f",
-    "url": "/kaleidoscope-web-streamer/static/media/logo.ee7cd8ed.svg"
   }
 ]);
