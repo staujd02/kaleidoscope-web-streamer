@@ -3,10 +3,13 @@ import './App.css';
 import Cycler from './components/Cycler';
 import SourceList from './sources/SourceList';
 
+const TEN_SECONDS = 10000;
+const ONE_MINUTE = TEN_SECONDS * 6;
+const cycleTime = ONE_MINUTE;
 const App: React.FC = () => {
   return (
     <div className="App">
-      <Cycler sourceList={SourceList}/>
+      <Cycler sourceList={SourceList} cycleTime={cycleTime}/>
     </div>
   );
 }

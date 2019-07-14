@@ -11,6 +11,7 @@ interface Source {
 
 interface CyclerProps {
     sourceList: Array<Source>
+    cycleTime: number
 }
 
 interface CyclerState {
