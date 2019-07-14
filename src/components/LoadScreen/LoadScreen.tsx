@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from './logo.svg';
+import logo from './kaleidoscope-2.svg';
 
 const LoadScreen: React.FC = () => 
     <header className="App-header">
