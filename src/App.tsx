@@ -1,14 +1,12 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Cycler from './components/Cycler';
+import SourceList from './sources/SourceList';
 
 const App: React.FC = () => {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Starting Up The Streams...</p>
-      </header>
+      <Cycler sourceList={SourceList}/>
     </div>
   );
 }
