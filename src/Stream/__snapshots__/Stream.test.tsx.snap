@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`The Stream renders correctly 1`] = `
+<iframe
+  src="https://www.google.com"
+  title="Google"
+>
+  Your browser doesn't support iFrames.
+</iframe>
+`;

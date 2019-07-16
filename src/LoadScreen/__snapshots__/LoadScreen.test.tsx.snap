@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`The Load Screen renders correctly 1`] = `
+<header
+  className="App-header"
+>
+  <img
+    alt="logo"
+    className="App-logo"
+    src="logo.svg"
+  />
+  <p>
+    Starting Up The Streams...
+  </p>
+</header>
+`;
