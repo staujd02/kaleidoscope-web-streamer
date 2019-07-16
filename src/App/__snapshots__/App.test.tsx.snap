@@ -3,14 +3,21 @@
 exports[`The App renders correctly 1`] = `
 <div
   className="App"
+  onClick={[Function]}
 >
   <div>
-    <iframe
-      src="https://earth.nullschool.net/#current/particulates/surface/level/overlay=pm10/stereographic=-89.52,26.53,757/loc=-92.818,-73.479"
-      title="Map displaying particulates dispersion"
+    <header
+      className="App-header"
     >
-      Your browser doesn't support iFrames.
-    </iframe>
+      <img
+        alt="logo"
+        className="App-logo"
+        src="kaleidoscope-2.svg"
+      />
+      <p>
+        Starting Up The Streams...
+      </p>
+    </header>
   </div>
 </div>
 `;

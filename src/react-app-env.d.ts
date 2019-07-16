@@ -17,3 +17,11 @@ interface CyclerProps {
 interface CyclerState {
     activeSource: number
 }
+
+interface LoaderProps {
+    component: React.Component
+}
+
+interface LoaderState {
+    doneLoading: boolean
+}

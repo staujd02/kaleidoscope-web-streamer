@@ -1,20 +1,20 @@
 import React from 'react';
-import LoadScreen from './LoadScreen/LoadScreen';
-
-interface LoaderProps {
-    component: React.Component
-}
-
-interface LoaderState {
-    doneLoading: boolean
-}
+import LoadScreen from '../LoadScreen/LoadScreen';
 
 class Loader extends React.Component<LoaderProps, LoaderState> {
+
     constructor(props: any) {
         super(props);
         this.state = {
             doneLoading: false
         }
+        setTimeout(this.finishedLoading.bind(this), 5000);
+    }
+
+    finishedLoading(){
+        this.setState({
+            doneLoading: true
+        });
     }
 
     render(){

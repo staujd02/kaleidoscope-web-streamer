@@ -7,7 +7,7 @@ exports[`The Load Screen renders correctly 1`] = `
   <img
     alt="logo"
     className="App-logo"
-    src="logo.svg"
+    src="kaleidoscope-2.svg"
   />
   <p>
     Starting Up The Streams...
