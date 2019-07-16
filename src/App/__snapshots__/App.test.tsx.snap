@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`The App renders correctly 1`] = `
+<div
+  className="App"
+>
+  <div>
+    <iframe
+      src="https://earth.nullschool.net/#current/particulates/surface/level/overlay=pm10/stereographic=-89.52,26.53,757/loc=-92.818,-73.479"
+      title="Map displaying particulates dispersion"
+    >
+      Your browser doesn't support iFrames.
+    </iframe>
+  </div>
+</div>
+`;
