@@ -16,6 +16,7 @@ interface CyclerProps {
 
 interface CyclerState {
     activeSource: number
+    millisecondsRemaining: number
 }
 
 interface LoaderProps {
@@ -24,4 +25,8 @@ interface LoaderProps {
 
 interface LoaderState {
     doneLoading: boolean
+}
+
+interface TimeDisplayProps{
+    time: number
 }

@@ -5,7 +5,7 @@ import renderer from 'react-test-renderer';
 describe('The Cycler', () => {
 
     const SourceList = getSourceList() as Array<Source>;
-    const CycleTime = 1;
+    const CycleTime = 64000;
 
     it('renders correctly', () => {
         const tree = renderer

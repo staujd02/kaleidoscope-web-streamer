@@ -1,0 +1,19 @@
+.time-display{
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
+    height: 70px;
+    width: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: rgba(0, 0, 0, .35);
+    border-radius: 40px;
+}
+
+.time-box{
+    color: rgba(200, 200, 200, .65);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 24pt;
+    text-align: center;
+    padding: 15px 0;
+}
