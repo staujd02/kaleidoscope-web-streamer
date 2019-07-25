@@ -10,7 +10,7 @@ class Stream extends React.Component<StreamProps> {
     render(){
         const { source, title } = this.props.source;
         return (
-            <iframe title={title} src={source}>{this.noOpMessage()}</iframe>
+            <iframe title={title} allow={"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"} src={source}>{this.noOpMessage()}</iframe>
         );
     }
 
