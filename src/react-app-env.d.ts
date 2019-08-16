@@ -17,6 +17,7 @@ interface CyclerProps {
 interface CyclerState {
     activeSource: number
     millisecondsRemaining: number
+    forgoRender: boolean
 }
 
 interface LoaderProps {
@@ -29,4 +30,5 @@ interface LoaderState {
 
 interface TimeDisplayProps{
     time: number
+    onClick?: (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => void 
 }

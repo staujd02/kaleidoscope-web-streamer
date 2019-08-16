@@ -4,10 +4,12 @@
   "private": true,
   "homepage": "https://staujd02.github.io/kaleidoscope-web-streamer",
   "dependencies": {
+    "@types/enzyme": "^3.10.3",
     "@types/jest": "24.0.15",
     "@types/node": "12.6.2",
     "@types/react": "16.8.23",
     "@types/react-dom": "16.8.4",
+    "enzyme": "^3.10.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-scripts": "3.0.1",

@@ -15,4 +15,15 @@ describe("The time display", () => {
         expect(tree).toMatchSnapshot();
     });
 
+    xdescribe("when the user clicks the time display", () => {
+
+        beforeEach(() => {
+
+        });
+
+        it("fires the interaction handler", () => {
+
+        });
+    });
+
 });

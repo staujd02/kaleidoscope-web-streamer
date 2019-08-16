@@ -4,11 +4,11 @@ import './TimeDisplay.css';
 class TimeDisplay extends React.Component<TimeDisplayProps>{
 
     render(){
-        const { time } = this.props;
+        const { time, onClick } = this.props;
         const secondsRemaining = this.calcSeconds(time);
         const minutesRemaining = this.calcMinutes(time);
         return (
-            <div className="time-display">
+            <div onClick={onClick} className="time-display">
                 <div className="time-box">{`${minutesRemaining}:${secondsRemaining}`}</div>
             </div>
         );
