@@ -1,5 +1,31 @@
 #cycler-controls{
     position: absolute;
-    bottom: -50vh;
-    left: 50vw;
+    left: calc(50vw - 150px / 2);
+    top: -25px;
+    padding-top: 65px;
+    height: 75px;
+    width: 150px;
+    border-radius: 25px;
+    background-color: rgba(3, 16, 58, 0.7); 
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+#cycler-controls button{
+    flex: 1 1;
+    background-color: rgba(5, 19, 58, 0.8);
+    box-shadow: 0 0 3px 3px black;
+    color: white;
+    border: none;
+    height: 50px;
+    width: 50px;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+#cycler-controls button:hover{
+    box-shadow: 0 0 7px 5px black;
 }

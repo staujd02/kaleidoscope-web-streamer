@@ -62,7 +62,7 @@ class Cycler extends React.Component<CyclerProps, CyclerState> {
                 <TimeDisplay onClick={this.timeClicked} 
                     time={millisecondsRemaining} />
                 <Curtain open={controlsVisible}>
-                    <CyclerControl onSkip={this.onSkip} />}
+                    <CyclerControl onSkip={this.onSkip} />
                 </Curtain>
             </div>
         );
