@@ -1,6 +1,8 @@
 import React from 'react';
 import Stream from '../Stream/Stream';
 import TimeDisplay from '../TimeDisplay/TimeDisplay';
+import CyclerControl from './CyclerControl/CyclerControl';
+import Curtain from '../Curtain/Curtain';
 
 class Cycler extends React.Component<CyclerProps, CyclerState> {
     
@@ -8,36 +10,66 @@ class Cycler extends React.Component<CyclerProps, CyclerState> {
 
     constructor(props: any){
         super(props);
-        this.getSource = this.getSource.bind(this);
         this.state = {
             activeSource: 0,
             millisecondsRemaining: this.props.cycleTime,
-            forgoRender: false
+            controlsVisible: false
         }
     }
 
-    shouldComponentUpdate(){
-        const { forgoRender } = this.state;
-        return !forgoRender ;
+    componentDidMount(){
+        const { activeSource } = this.state;
+        const { sourceList } = this.props;
+        setTimeout(() => this.tick(sourceList, activeSource), this.increment);
     }
     
-    cycle = (sourceList: Array<Source>, activeSource: number) => {
+    tick = (sourceList: Source[], activeSource: number) => {
+        let nextRemainingCycle = this.timeRemainingInCycle();
+        if (nextRemainingCycle > this.increment)
+            this.updateClock(nextRemainingCycle);
+        else
+            this.cycle();
+        setTimeout(() => this.tick(sourceList, activeSource), this.increment);
+    }
+    
+    cycle = () => {
+        const { activeSource } = this.state;
+        const { sourceList } = this.props;
         this.setState({
            activeSource: this.cycleIndex(activeSource, sourceList.length),
-           millisecondsRemaining: this.props.cycleTime,
-           forgoRender: false
+           millisecondsRemaining: this.props.cycleTime
         });
     }
 
-    tick(sourceList: Array<Source>, activeSource: number) {
+    timeClicked = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+        this.setState({ controlsVisible: true });
+    }
+
+    private updateClock = (nextRemainingCycle: number) => {
+        this.setState({
+            millisecondsRemaining: nextRemainingCycle
+        });
+    }
+
+    private timeRemainingInCycle() {
         const { millisecondsRemaining } = this.state;
         let nextRemainingCycle = millisecondsRemaining - this.increment;
-        if (nextRemainingCycle > this.increment)
-            this.setState({
-                millisecondsRemaining: nextRemainingCycle
-            });
-        else
-            this.cycle(sourceList, activeSource);
+        return nextRemainingCycle;
+    }
+
+    render() {
+        const { activeSource, millisecondsRemaining,
+             controlsVisible } = this.state;
+        return (
+            <div>
+                <Stream source={this.getSource(activeSource)} />
+                <TimeDisplay onClick={this.timeClicked} 
+                    time={millisecondsRemaining} />
+                <Curtain open={controlsVisible}>
+                    <CyclerControl />}
+                </Curtain>
+            </div>
+        );
     }
 
     private cycleIndex(activeSource: number, length: number) {
@@ -48,26 +80,7 @@ class Cycler extends React.Component<CyclerProps, CyclerState> {
         return activeSource;
     }
 
-    timeClicked = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
-        this.setState({
-            millisecondsRemaining: 0,
-            forgoRender: true
-        });
-    }
-
-    render() {
-        const { activeSource, millisecondsRemaining } = this.state;
-        const { sourceList } = this.props;
-        setTimeout(() => this.tick(sourceList, activeSource), this.increment);
-        return (
-            <div>
-                <Stream source={this.getSource(activeSource)} />
-                <TimeDisplay onClick={this.timeClicked} time={millisecondsRemaining} />
-            </div>
-        );
-    }
-
-    private getSource(activeSource: number) {
+    private getSource = (activeSource: number) => {
         return this.props.sourceList[activeSource];
     }
 }

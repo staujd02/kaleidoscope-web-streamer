@@ -1,43 +1,42 @@
 import React from 'react';
 import Cycler from './Cycler';
-import { ShallowWrapper, shallow } from 'enzyme';
+import { mount, ReactWrapper } from 'enzyme';
 import { formatHTML } from '../../TestUtilities/htmlFormatter';
 
 describe('The Cycler', () => {
 
-    const SourceList = getSourceList() as Array<Source>;
-    const cycleTime = 1000;
+    const SourceList = getSourceList() as Source[];
+    const cycleTime = 1500;
     const google = getSource1();
     const facebook = getSource2();
 
-    let wrapper: ShallowWrapper<CyclerProps, CyclerState>;
+    let wrapper: ReactWrapper<CyclerProps, CyclerState>;
 
     beforeEach(() => {
-        wrapper = shallow(<Cycler sourceList={SourceList} cycleTime={cycleTime} />)
+        wrapper = mount(<Cycler sourceList={SourceList} cycleTime={cycleTime} />)
     });
 
     it('renders correctly', () => expect(formatHTML(wrapper.html())).toMatchSnapshot());
+        
+    it("doesn't have the cycler controls open by default", () => {
+        expect(wrapper.find('.cycler-controls').length).toEqual(0);
+    });
 
     describe("given the cycler time has ticked by", () => {
 
-        beforeEach(done => {
-            setTimeout(done, cycleTime / 2);
-        });
+        beforeEach(done => setTimeout(done, cycleTime / 2));
 
         it("correctly displays the time left", () => {
             expect(
-                (wrapper.find('TimeDisplay')
-                    .getElement().props as TimeDisplayProps)
-                    .time / 10000
-            ).toBeCloseTo(cycleTime / 2 / 10000, 1);
+                (wrapper.instance().state as CyclerState)
+                    .millisecondsRemaining
+            );
         });
     });
 
     describe("given the cycler has reached then end of the list", () => {
 
-        beforeEach(done => {
-            setTimeout(done, cycleTime * 2);
-        });
+        beforeEach(done => setTimeout(done, cycleTime * 2));
 
         it("cycles around to the first stream", () => {
             expect(
@@ -50,8 +49,13 @@ describe('The Cycler', () => {
     });
 
     describe("given the time display was clicked", () => {
-        beforeEach(() => {
-            wrapper.find('TimeDisplay').simulate('click');
+
+        beforeEach(() =>
+            wrapper.find('TimeDisplay').simulate('click')
+        );
+
+        it("opens the cycler controls", () => {
+            expect(wrapper.find('.cycler-controls').length).toEqual(1);
         });
 
         xit('cycles to the next stream', () => {
@@ -66,16 +70,14 @@ describe('The Cycler', () => {
 
     describe("given the load time has elapsed", () => {
 
-        it('cycles to the next stream', done => {
-            setTimeout(() => {
-                expect(
-                    (wrapper.find('Stream')
-                        .getElement().props as StreamProps)
-                        .source
-                        .title
-                ).toEqual(facebook.title);
-                done();
-            }, cycleTime + 10);
+        beforeEach(done => setTimeout(done, cycleTime * 2))
+
+        it('cycles to the next stream', () => {
+            expect(
+                (wrapper.instance()
+                    .state as CyclerState)
+                    .activeSource
+            ).toEqual(2);
         });
 
     });
@@ -83,7 +85,8 @@ describe('The Cycler', () => {
     function getSourceList(): Source[] {
         return [
             getSource1(),
-            getSource2()            
+            getSource2(),
+            getSource3()
         ];
     }
 
@@ -93,11 +96,18 @@ describe('The Cycler', () => {
             title: "Google"
         } as Source
     }
-    
+
     function getSource2(): Source {
         return {
             source: "https://www.facebook.com",
             title: "Facebook"
+        }
+    }
+
+    function getSource3(): Source {
+        return {
+            source: "https://www.twitter.com",
+            title: "Twitter"
         }
     }
 

@@ -17,7 +17,20 @@ interface CyclerProps {
 interface CyclerState {
     activeSource: number
     millisecondsRemaining: number
-    forgoRender: boolean
+    controlsVisible: boolean
+}
+
+interface CyclerControlProps {
+}
+
+interface CyclerControlState {
+}
+
+interface CurtainProps {
+    open: boolean
+}
+
+interface CurtainState {
 }
 
 interface LoaderProps {
