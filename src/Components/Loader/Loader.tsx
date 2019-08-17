@@ -8,10 +8,10 @@ class Loader extends React.Component<LoaderProps, LoaderState> {
         this.state = {
             doneLoading: false
         }
-        setTimeout(this.finishedLoading.bind(this), 5000);
+        setTimeout(this.finishedLoading, this.props.loadTime);
     }
 
-    finishedLoading(){
+    finishedLoading = () => {
         this.setState({
             doneLoading: true
         });
@@ -19,11 +19,9 @@ class Loader extends React.Component<LoaderProps, LoaderState> {
 
     render(){
         const { doneLoading } = this.state;
-        const { component } = this.props; 
         return (
             <div>
-                {!doneLoading && <LoadScreen />}
-                {doneLoading && component}
+                {doneLoading ? this.props.children : (<LoadScreen />)}
             </div>
         );
     }

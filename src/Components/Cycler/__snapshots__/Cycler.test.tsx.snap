@@ -11,6 +11,7 @@ exports[`The Cycler renders correctly 1`] = `
   </iframe>
   <div
     className="time-display"
+    onClick={[Function]}
   >
     <div
       className="time-box"

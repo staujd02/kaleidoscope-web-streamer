@@ -1,17 +1,16 @@
 import React from 'react';
 import './App.css';
 import Cycler from '../Cycler/Cycler';
-import SourceList from '../source-list.json';
+import SourceList from '../../source-list.json';
 import Loader from '../Loader/Loader';
-
-const TEN_MINUTES = "600000";
-const cycleTime = parseInt(process.env.REACT_APP_CYCLE_TIME || TEN_MINUTES);
+import { loadTime, cycleTime } from '../../Constants/environment.constants';
 
 const App: React.FC = () => {
-  const cycle = <Cycler sourceList={SourceList} cycleTime={cycleTime} /> as unknown as React.Component;
   return (
     <div className="App" onClick={goFullScreen}>
-      <Loader component={cycle} />
+      <Loader loadTime={loadTime}>
+        <Cycler sourceList={SourceList} cycleTime={cycleTime} />
+      </Loader>
     </div>
   );
 }

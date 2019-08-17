@@ -47,7 +47,7 @@ class Cycler extends React.Component<CyclerProps, CyclerState> {
             activeSource = 0;
         }
         return activeSource;
-    } 
+    }
 
     timeClicked = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
         this.setState({

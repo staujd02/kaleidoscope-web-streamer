@@ -21,7 +21,7 @@ interface CyclerState {
 }
 
 interface LoaderProps {
-    component: React.Component
+    loadTime: number
 }
 
 interface LoaderState {
