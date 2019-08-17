@@ -18,10 +18,13 @@ interface CyclerState {
     activeSource: number
     millisecondsRemaining: number
     controlsVisible: boolean
+    playbackPaused: boolean
 }
 
 interface CyclerControlProps {
+    playBackMode: PlayBackMode
     onSkip?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void 
+    onPlayBack?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void 
 }
 
 interface CyclerControlState {

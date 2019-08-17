@@ -3,6 +3,7 @@ import Stream from '../Stream/Stream';
 import TimeDisplay from '../TimeDisplay/TimeDisplay';
 import CyclerControl from './CyclerControl/CyclerControl';
 import Curtain from '../Curtain/Curtain';
+import { PlayBackMode } from '../../enumerations';
 
 class Cycler extends React.Component<CyclerProps, CyclerState> {
     
@@ -13,7 +14,8 @@ class Cycler extends React.Component<CyclerProps, CyclerState> {
         this.state = {
             activeSource: 0,
             millisecondsRemaining: this.props.cycleTime,
-            controlsVisible: false
+            controlsVisible: false,
+            playbackPaused: false
         }
     }
 
@@ -23,12 +25,27 @@ class Cycler extends React.Component<CyclerProps, CyclerState> {
         setTimeout(() => this.tick(sourceList, activeSource), this.increment);
     }
     
+    render() {
+        const { activeSource, millisecondsRemaining,
+            controlsVisible, playbackPaused } = this.state;
+        let playbackMode = playbackPaused ? PlayBackMode.Play : PlayBackMode.Pause;
+        return (
+            <div>
+                <Stream source={this.getSource(activeSource)} />
+                <TimeDisplay onClick={this.timeClicked} 
+                    time={millisecondsRemaining} />
+                <Curtain open={controlsVisible}>
+                    <CyclerControl onSkip={this.onSkip}
+                        playBackMode={playbackMode}
+                        onPlayBack={this.onPlayBack} />
+                </Curtain>
+            </div>
+        );
+    }
+    
     tick = (sourceList: Source[], activeSource: number) => {
-        let nextRemainingCycle = this.timeRemainingInCycle();
-        if (nextRemainingCycle > this.increment)
-            this.updateClock(nextRemainingCycle);
-        else
-            this.cycle();
+        if (!this.state.playbackPaused)
+            this.runTick(this.timeRemainingInCycle());
         setTimeout(() => this.tick(sourceList, activeSource), this.increment);
     }
     
@@ -41,39 +58,38 @@ class Cycler extends React.Component<CyclerProps, CyclerState> {
         });
     }
 
+
+    onSkip = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+        this.cycle();
+        this.setState({ controlsVisible: false});
+    }
+    
+    onPlayBack = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+        this.setState({ playbackPaused: !this.state.playbackPaused});
+        this.setState({ controlsVisible: false});
+    }
+
+    timeClicked = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+        this.setState({ controlsVisible: !this.state.controlsVisible });
+    }
+
     private updateClock = (nextRemainingCycle: number) => {
         this.setState({
             millisecondsRemaining: nextRemainingCycle
         });
     }
 
+    private runTick(nextRemainingCycle: number) {
+        if (nextRemainingCycle > this.increment)
+            this.updateClock(nextRemainingCycle);
+        else
+            this.cycle();
+    }
+
     private timeRemainingInCycle() {
         const { millisecondsRemaining } = this.state;
         let nextRemainingCycle = millisecondsRemaining - this.increment;
         return nextRemainingCycle;
-    }
-
-    render() {
-        const { activeSource, millisecondsRemaining,
-             controlsVisible } = this.state;
-        return (
-            <div>
-                <Stream source={this.getSource(activeSource)} />
-                <TimeDisplay onClick={this.timeClicked} 
-                    time={millisecondsRemaining} />
-                <Curtain open={controlsVisible}>
-                    <CyclerControl onSkip={this.onSkip} />
-                </Curtain>
-            </div>
-        );
-    }
-
-    onSkip = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-        this.cycle();
-    }
-
-    timeClicked = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
-        this.setState({ controlsVisible: !this.state.controlsVisible });
     }
 
     private cycleIndex(activeSource: number, length: number) {

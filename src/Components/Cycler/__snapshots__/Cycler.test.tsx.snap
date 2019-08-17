@@ -9,8 +9,16 @@ exports[`The Cycler renders correctly 1`] = `
   </div>
   <div id=\\"cycler-controls\\" style=\\"visibility: hidden; webkit-transform: translateY(-0px); transform: translateY(-0px);\\">
     <div class=\\"cycler-controls\\">
-      <button id=\\"skip-control\\">Skip</button>
-    </div>}
+      <button class=\\"MuiButtonBase-root MuiIconButton-root\\" tabindex=\\"0\\" type=\\"button\\" id=\\"skip-control\\" aria-label=\\"skip\\">
+        <span class=\\"MuiIconButton-label\\">
+          <svg class=\\"MuiSvgIcon-root\\" focusable=\\"false\\" viewBox=\\"0 0 24 24\\" aria-hidden=\\"true\\" role=\\"presentation\\">
+            <path d=\\"M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z\\"></path>
+          </svg>
+        </span>
+        <span class=\\"MuiTouchRipple-root\\"></span>
+      </button>
+      <button id=\\"playback-control\\"> Pause </button>
+    </div>
   </div>
 </div>
 "

@@ -4,7 +4,7 @@
     top: -25px;
     padding-top: 65px;
     height: 75px;
-    width: 150px;
+    width: 165px;
     border-radius: 25px;
     background-color: rgba(3, 16, 58, 0.7); 
     display: flex;
@@ -24,6 +24,7 @@
     width: 50px;
     border-radius: 50px;
     cursor: pointer;
+    margin: 10px;
 }
 
 #cycler-controls button:hover{

@@ -48,7 +48,7 @@ describe('The Cycler', () => {
         });
     });
 
-    describe("when the time display was clicked", () => {
+    describe("when the time display is clicked", () => {
 
         beforeEach(() =>
             wrapper.find('TimeDisplay').simulate('click')
@@ -56,6 +56,19 @@ describe('The Cycler', () => {
 
         it("opens the cycler controls", () => {
             expect(wrapper.find('.cycler-controls').length).toEqual(1);
+            expect((wrapper.instance().state as CyclerState).controlsVisible).toEqual(true);
+        });
+    
+        describe("when the time display is clicked again", () => {
+
+            beforeEach(() =>
+                wrapper.find('TimeDisplay').simulate('click')
+            );
+
+            it("opens the cycler controls", () => {
+                expect((wrapper.instance().state as CyclerState).controlsVisible).toEqual(false);
+            });
+
         });
 
         describe("when the skip button is clicked", () => {
@@ -71,6 +84,51 @@ describe('The Cycler', () => {
                         .source
                         .title
                 ).toEqual(facebook.title);
+            });
+
+            it('hides the controls', () => {
+                expect((wrapper.instance().state as CyclerState).controlsVisible).toEqual(false);
+            });
+        });
+        
+        describe("when the playback button is clicked", () => {
+
+            beforeEach(done => {
+                wrapper.find('#playback-control').simulate('click');
+                setTimeout(done, cycleTime + cycleTime / 2);
+            });
+            
+            it('pauses the stream', () => {
+                expect(
+                    (wrapper.find('Stream')
+                        .getElement().props as StreamProps)
+                        .source
+                        .title
+                ).toEqual(google.title);
+            });
+
+            it('hides the controls', () => {
+                expect((wrapper.instance().state as CyclerState).controlsVisible).toEqual(false);
+            });
+        });
+        
+        describe("when the skip button is clicked", () => {
+
+            beforeEach(() => {
+                wrapper.find('#skip-control').simulate('click');
+            });
+            
+            it('cycles to the next stream', () => {
+                expect(
+                    (wrapper.find('Stream')
+                        .getElement().props as StreamProps)
+                        .source
+                        .title
+                ).toEqual(facebook.title);
+            });
+
+            it('hides the controls', () => {
+                expect((wrapper.instance().state as CyclerState).controlsVisible).toEqual(false);
             });
         });
     });
