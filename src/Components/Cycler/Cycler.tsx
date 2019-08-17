@@ -41,10 +41,6 @@ class Cycler extends React.Component<CyclerProps, CyclerState> {
         });
     }
 
-    timeClicked = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
-        this.setState({ controlsVisible: true });
-    }
-
     private updateClock = (nextRemainingCycle: number) => {
         this.setState({
             millisecondsRemaining: nextRemainingCycle
@@ -66,10 +62,18 @@ class Cycler extends React.Component<CyclerProps, CyclerState> {
                 <TimeDisplay onClick={this.timeClicked} 
                     time={millisecondsRemaining} />
                 <Curtain open={controlsVisible}>
-                    <CyclerControl />}
+                    <CyclerControl onSkip={this.onSkip} />}
                 </Curtain>
             </div>
         );
+    }
+
+    onSkip = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+        this.cycle();
+    }
+
+    timeClicked = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+        this.setState({ controlsVisible: !this.state.controlsVisible });
     }
 
     private cycleIndex(activeSource: number, length: number) {

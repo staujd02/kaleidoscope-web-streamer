@@ -7,6 +7,11 @@ exports[`The Cycler renders correctly 1`] = `
   <div class=\\"time-display\\">
     <div class=\\"time-box\\">00:01</div>
   </div>
+  <div id=\\"cycler-controls\\" style=\\"visibility: hidden; webkit-transform: translateY(768px) translateY(-0px); transform: translateY(768px) translateY(-0px);\\">
+    <div class=\\"cycler-controls\\">
+      <button id=\\"skip-control\\">Skip</button>
+    </div>}
+  </div>
 </div>
 "
 `;

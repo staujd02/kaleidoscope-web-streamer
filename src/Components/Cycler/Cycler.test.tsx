@@ -19,7 +19,7 @@ describe('The Cycler', () => {
     it('renders correctly', () => expect(formatHTML(wrapper.html())).toMatchSnapshot());
         
     it("doesn't have the cycler controls open by default", () => {
-        expect(wrapper.find('.cycler-controls').length).toEqual(0);
+        expect((wrapper.instance().state as CyclerState).controlsVisible).toEqual(false);
     });
 
     describe("given the cycler time has ticked by", () => {
@@ -48,7 +48,7 @@ describe('The Cycler', () => {
         });
     });
 
-    describe("given the time display was clicked", () => {
+    describe("when the time display was clicked", () => {
 
         beforeEach(() =>
             wrapper.find('TimeDisplay').simulate('click')
@@ -58,19 +58,26 @@ describe('The Cycler', () => {
             expect(wrapper.find('.cycler-controls').length).toEqual(1);
         });
 
-        xit('cycles to the next stream', () => {
-            expect(
-                (wrapper.find('Stream')
-                    .getElement().props as StreamProps)
-                    .source
-                    .title
-            ).toEqual(facebook.title);
+        describe("when the skip button is clicked", () => {
+
+            beforeEach(() => {
+                wrapper.find('#skip-control').simulate('click');
+            });
+            
+            it('cycles to the next stream', () => {
+                expect(
+                    (wrapper.find('Stream')
+                        .getElement().props as StreamProps)
+                        .source
+                        .title
+                ).toEqual(facebook.title);
+            });
         });
     });
 
     describe("given the load time has elapsed", () => {
 
-        beforeEach(done => setTimeout(done, cycleTime + 10))
+        beforeEach(done => setTimeout(done, cycleTime + cycleTime/2))
 
         it('cycles to the next stream', () => {
             expect(

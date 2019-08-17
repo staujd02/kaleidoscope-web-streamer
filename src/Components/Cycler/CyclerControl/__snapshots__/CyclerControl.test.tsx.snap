@@ -2,6 +2,8 @@
 
 exports[`The Cycler renders correctly 1`] = `
 "
-<div class=\\"cycler-controls\\"></div>
+<div class=\\"cycler-controls\\">
+  <button id=\\"skip-control\\">Skip</button>
+</div>
 "
 `;

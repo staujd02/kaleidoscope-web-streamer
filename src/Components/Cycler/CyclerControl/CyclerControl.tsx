@@ -1,9 +1,14 @@
 import React from 'react';
+import './CyclerControl.css';
 
 class CyclerControl extends React.Component<CyclerControlProps, CyclerControlState> {
 
     render(){
-        return <div className="cycler-controls"></div>;
+        const { onSkip } = this.props;
+        return (
+            <div className='cycler-controls'>
+                <button id="skip-control" onClick={onSkip}>Skip</button>
+            </div>);
     }
 
 }

@@ -21,6 +21,7 @@ interface CyclerState {
 }
 
 interface CyclerControlProps {
+    onSkip?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void 
 }
 
 interface CyclerControlState {

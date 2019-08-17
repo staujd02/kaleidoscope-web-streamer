@@ -1,9 +1,15 @@
 import React from 'react';
+import Slide from '@material-ui/core/Slide';
 
 class Curtain extends React.Component<CurtainProps, CurtainState> {
-    render(){
+    render() {
         const { open } = this.props;
-        return open ? this.props.children : null;
+        return (
+            <Slide direction={'up'} in={open}>
+                <div id="cycler-controls">
+                    {this.props.children}
+                </div>
+            </Slide>);
     }
 }
 
