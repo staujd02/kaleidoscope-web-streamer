@@ -11,6 +11,11 @@
     cursor: pointer;
 }
 
+.time-display:hover{
+    box-shadow: 0 0 7px 5px black;
+    background-color: rgba(0, 0, 0, .65);
+}
+
 .time-box{
     color: rgba(200, 200, 200, .65);
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
