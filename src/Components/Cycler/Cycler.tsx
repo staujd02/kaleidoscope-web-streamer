@@ -29,7 +29,6 @@ class Cycler extends React.Component<CyclerProps, CyclerState> {
         });
     }
 
-
     tick(sourceList: Array<Source>, activeSource: number) {
         const { millisecondsRemaining } = this.state;
         let nextRemainingCycle = millisecondsRemaining - this.increment;
