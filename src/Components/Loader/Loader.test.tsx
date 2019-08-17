@@ -1,16 +1,19 @@
 import React from 'react';
 import Loader from './Loader';
-import renderer from 'react-test-renderer';
+import { shallow, ShallowWrapper } from 'enzyme';
+import { formatHTML } from '../../TestUtilities/htmlFormatter';
 
 describe('The Loader', () => {
+    
+    let wrapper: ShallowWrapper<LoaderProps, LoaderState>;
 
-    it('renders correctly', () => {
-        const tree = renderer
-            .create(<Loader loadTime={100}>
+    beforeEach(() => {
+        wrapper = shallow(
+            <Loader loadTime={100}>
                 <label>Yelp!</label>
             </Loader>)
-            .toJSON();
-        expect(tree).toMatchSnapshot();
     });
+
+    it('renders correctly', () => expect(formatHTML(wrapper.html())).toMatchSnapshot());
 
 });

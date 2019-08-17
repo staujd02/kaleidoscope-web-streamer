@@ -1,14 +1,24 @@
 import React from 'react';
 import App from './App';
-import renderer from 'react-test-renderer';
+import { ShallowWrapper, shallow } from 'enzyme';
+import { formatHTML } from '../../TestUtilities/htmlFormatter';
 
 describe('The App', () => {
 
-  it('renders correctly', () => {
-    const tree = renderer
-      .create(<App />)
-      .toJSON();
-    expect(tree).toMatchSnapshot();
+  let wrapper: ShallowWrapper;
+
+  beforeEach(() => {
+    wrapper = shallow(<App />);
+  });
+
+  it('renders correctly', () => expect(formatHTML(wrapper.html())).toMatchSnapshot());
+
+  xdescribe("given the browser support going fullscreen", () => {
+    describe("when the user clicks on the App", () => {
+      it("goes fullscreen", () => {
+        // ?      
+      });
+    });
   });
 
 });

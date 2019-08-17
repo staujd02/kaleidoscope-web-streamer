@@ -6,8 +6,9 @@ import Loader from '../Loader/Loader';
 import { loadTime, cycleTime } from '../../Constants/environment.constants';
 
 const App: React.FC = () => {
+  let reference = React.createRef() as React.RefObject<HTMLDivElement>;
   return (
-    <div className="App" onClick={goFullScreen}>
+    <div className="App" ref={reference} onClick={() => goFullScreen(reference)}>
       <Loader loadTime={loadTime}>
         <Cycler sourceList={SourceList} cycleTime={cycleTime} />
       </Loader>
@@ -15,10 +16,9 @@ const App: React.FC = () => {
   );
 }
 
-const goFullScreen = (): void => {
-  let div = document.getElementById("root");
-  if (div)
-    div.requestFullscreen();
+const goFullScreen = (reference: React.RefObject<HTMLDivElement>): void => {
+  if (reference.current)
+    reference.current.requestFullscreen();
 }
 
 export default App;

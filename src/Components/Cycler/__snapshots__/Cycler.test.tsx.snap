@@ -1,23 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`The Cycler renders correctly 1`] = `
+"
 <div>
-  <iframe
-    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-    src="https://www.google.com"
-    title="Google"
-  >
-    Your browser doesn't support iFrames.
-  </iframe>
-  <div
-    className="time-display"
-    onClick={[Function]}
-  >
-    <div
-      className="time-box"
-    >
-      01:04
-    </div>
+  <iframe title=\\"Google\\" allow=\\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\\" src=\\"https://www.google.com\\">Your browser doesn&#x27;t support iFrames.</iframe>
+  <div class=\\"time-display\\">
+    <div class=\\"time-box\\">01:04</div>
   </div>
 </div>
+"
 `;

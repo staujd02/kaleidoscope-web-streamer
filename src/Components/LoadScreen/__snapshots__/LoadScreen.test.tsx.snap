@@ -1,16 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`The Load Screen renders correctly 1`] = `
-<header
-  className="App-header"
->
-  <img
-    alt="logo"
-    className="App-logo"
-    src="kaleidoscope-2.svg"
-  />
-  <p>
-    Starting Up The Streams...
-  </p>
+"
+<header class=\\"App-header\\">
+  <img src=\\"kaleidoscope-2.svg\\" class=\\"App-logo\\" alt=\\"logo\\">
+  <p>Starting Up The Streams...</p>
 </header>
+"
 `;

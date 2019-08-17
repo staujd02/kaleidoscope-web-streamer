@@ -1,6 +1,8 @@
 import React from 'react';
 import Stream from './Stream';
-import renderer from 'react-test-renderer';
+import { StreamState } from 'http2';
+import { ShallowWrapper, shallow } from 'enzyme';
+import { formatHTML } from '../../TestUtilities/htmlFormatter';
 
 describe('The Stream', () => {
 
@@ -8,11 +10,11 @@ describe('The Stream', () => {
         title: "Google",
         source: "https://www.google.com"
     } as Source;
+    let wrapper: ShallowWrapper<StreamProps, StreamState>;
 
-    it('renders correctly', () => {
-        const tree = renderer
-            .create(<Stream source={Source} />)
-            .toJSON();
-        expect(tree).toMatchSnapshot();
+    beforeEach(() => {
+        wrapper = shallow(<Stream source={Source} />)
     });
+
+    it('renders correctly', () => expect(formatHTML(wrapper.html())).toMatchSnapshot());
 });

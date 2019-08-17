@@ -1,12 +1,15 @@
 import React from 'react';
 import LoadScreen from './LoadScreen';
-import renderer from 'react-test-renderer';
+import { ShallowWrapper, shallow } from 'enzyme';
+import { formatHTML } from '../../TestUtilities/htmlFormatter';
 
 describe('The Load Screen', () => {
-    it('renders correctly', () => {
-        const tree = renderer
-            .create(<LoadScreen />)
-            .toJSON();
-        expect(tree).toMatchSnapshot();
+    
+    let wrapper: ShallowWrapper;
+
+    beforeEach(() => {
+        wrapper = shallow(<LoadScreen />)
     });
+
+    it('renders correctly', () => expect(formatHTML(wrapper.html())).toMatchSnapshot());
 });
