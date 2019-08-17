@@ -70,14 +70,14 @@ describe('The Cycler', () => {
 
     describe("given the load time has elapsed", () => {
 
-        beforeEach(done => setTimeout(done, cycleTime * 2))
+        beforeEach(done => setTimeout(done, cycleTime + 10))
 
         it('cycles to the next stream', () => {
             expect(
                 (wrapper.instance()
                     .state as CyclerState)
                     .activeSource
-            ).toEqual(2);
+            ).toEqual(1);
         });
 
     });
