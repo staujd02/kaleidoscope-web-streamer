@@ -1,4 +1,4 @@
-.time-display{
+.time-display.MuiButton-root{
     position: absolute;
     right: 15px;
     top: 15px;
@@ -12,7 +12,7 @@
 }
 
 .time-display:hover{
-    box-shadow: 0 0 7px 5px black;
+    box-shadow: 0 0 7px 5px white;
     background-color: rgba(0, 0, 0, .65);
 }
 
@@ -21,5 +21,4 @@
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 24pt;
     text-align: center;
-    padding: 15px 0;
 }

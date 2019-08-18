@@ -6,7 +6,8 @@
     height: 75px;
     width: 165px;
     border-radius: 25px;
-    background-color: rgba(3, 16, 58, 0.7); 
+    /* background-color: rgba(3, 16, 58, 0.7);  */
+    background-color: rgba(0, 0, 0, .65);
     display: flex;
     flex-wrap: nowrap;
     flex-direction: row;
@@ -16,8 +17,8 @@
 
 #cycler-controls button{
     flex: 1 1;
-    background-color: rgba(5, 19, 58, 0.8);
-    box-shadow: 0 0 3px 3px black;
+    background-color: rgba(0, 0, 0, 0.8);
+    box-shadow: 0 0 3px 3px white;
     color: white;
     border: none;
     height: 50px;
@@ -28,5 +29,5 @@
 }
 
 #cycler-controls button:hover{
-    box-shadow: 0 0 7px 5px black;
+    box-shadow: 0 0 7px 5px white;
 }

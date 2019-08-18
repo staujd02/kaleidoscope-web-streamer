@@ -4,9 +4,12 @@ exports[`The Cycler renders correctly 1`] = `
 "
 <div>
   <iframe title=\\"Google\\" allow=\\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\\" src=\\"https://www.google.com\\">Your browser doesn't support iFrames.</iframe>
-  <div class=\\"time-display\\">
-    <div class=\\"time-box\\">00:01</div>
-  </div>
+  <button class=\\"MuiButtonBase-root MuiButton-root time-display MuiButton-text MuiButton-colorInherit\\" tabindex=\\"0\\" type=\\"button\\">
+    <span class=\\"MuiButton-label\\">
+      <div class=\\"time-box\\">00:01</div>
+    </span>
+    <span class=\\"MuiTouchRipple-root\\"></span>
+  </button>
   <div id=\\"cycler-controls\\" style=\\"visibility: hidden; webkit-transform: translateY(-0px); transform: translateY(-0px);\\">
     <div class=\\"cycler-controls\\">
       <button class=\\"MuiButtonBase-root MuiIconButton-root\\" tabindex=\\"0\\" type=\\"button\\" id=\\"skip-control\\" aria-label=\\"skip\\">

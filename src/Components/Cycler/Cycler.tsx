@@ -69,7 +69,7 @@ class Cycler extends React.Component<CyclerProps, CyclerState> {
         this.setState({ controlsVisible: false});
     }
 
-    timeClicked = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+    timeClicked = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
         this.setState({ controlsVisible: !this.state.controlsVisible });
     }
 

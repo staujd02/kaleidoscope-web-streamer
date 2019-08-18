@@ -1,5 +1,6 @@
 import React from 'react';
 import './TimeDisplay.css';
+import { Button } from '@material-ui/core';
 
 class TimeDisplay extends React.Component<TimeDisplayProps>{
 
@@ -8,9 +9,9 @@ class TimeDisplay extends React.Component<TimeDisplayProps>{
         const secondsRemaining = this.calcSeconds(time);
         const minutesRemaining = this.calcMinutes(time);
         return (
-            <div onClick={onClick} className="time-display">
+            <Button onClick={onClick} color={"inherit"} className="time-display">
                 <div className="time-box">{`${minutesRemaining}:${secondsRemaining}`}</div>
-            </div>
+            </Button>
         );
     }
 
