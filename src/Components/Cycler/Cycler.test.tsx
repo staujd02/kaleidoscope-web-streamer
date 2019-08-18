@@ -74,7 +74,7 @@ describe('The Cycler', () => {
         describe("when the skip button is clicked", () => {
 
             beforeEach(() => {
-                wrapper.find('#skip-control').simulate('click');
+                wrapper.find('#skip-control').first().simulate('click');
             });
             
             it('cycles to the next stream', () => {
@@ -94,7 +94,7 @@ describe('The Cycler', () => {
         describe("when the playback button is clicked", () => {
 
             beforeEach(done => {
-                wrapper.find('#playback-control').simulate('click');
+                wrapper.find('#playback-control').first().simulate('click');
                 setTimeout(done, cycleTime + cycleTime / 2);
             });
             
@@ -115,7 +115,7 @@ describe('The Cycler', () => {
         describe("when the skip button is clicked", () => {
 
             beforeEach(() => {
-                wrapper.find('#skip-control').simulate('click');
+                wrapper.find('#skip-control').first().simulate('click');
             });
             
             it('cycles to the next stream', () => {
