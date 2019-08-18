@@ -4,7 +4,7 @@ import { mount, ReactWrapper } from 'enzyme';
 import { formatHTML } from '../../TestUtilities/htmlFormatter';
 
 describe('The Cycler', () => {
-
+    
     const SourceList = getSourceList() as Source[];
     const cycleTime = 1500;
     const google = getSource1();
