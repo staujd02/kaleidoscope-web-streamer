@@ -1,4 +1,9 @@
-#cycler-controls{
+@import '../../../Assets/styling/mixins.scss';
+@import '../../../Assets/styling/palette.scss';
+
+#cycler-controls {
+    @include alpha-background-color(rgba($color1, $light), $color2);
+
     position: absolute;
     left: calc(50vw - 150px / 2);
     top: -25px;
@@ -6,8 +11,6 @@
     height: 75px;
     width: 165px;
     border-radius: 25px;
-    /* background-color: rgba(3, 16, 58, 0.7);  */
-    background-color: rgba(0, 0, 0, .65);
     display: flex;
     flex-wrap: nowrap;
     flex-direction: row;
@@ -15,19 +18,16 @@
     align-items: flex-end;
 }
 
-#cycler-controls button{
+#cycler-controls button {
+    @include alpha-background-color(rgba($color1, $heavy), $color2);
+    @include button-shadow-effect;
+
     flex: 1 1;
-    background-color: rgba(0, 0, 0, 0.8);
-    box-shadow: 0 0 3px 3px white;
-    color: white;
+    color: $color2;
     border: none;
-    height: 50px;
-    width: 50px;
+    max-height: 50px;
+    max-width: 50px;
     border-radius: 50px;
     cursor: pointer;
     margin: 10px;
-}
-
-#cycler-controls button:hover{
-    box-shadow: 0 0 7px 5px white;
 }

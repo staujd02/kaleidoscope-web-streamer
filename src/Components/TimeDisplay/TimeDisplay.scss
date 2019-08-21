@@ -1,4 +1,9 @@
+@import '../../Assets/styling/mixins.scss';
+@import '../../Assets/styling/palette.scss';
+
 .time-display.MuiButton-root{
+    @include alpha-background-color(rgba($color1, $airy), $color2);
+
     position: absolute;
     right: 15px;
     top: 15px;
@@ -6,19 +11,17 @@
     width: auto;
     padding-left: 20px;
     padding-right: 20px;
-    background-color: rgba(0, 0, 0, .35);
     border-radius: 40px;
     cursor: pointer;
 }
 
 .time-display.MuiButton-root:hover{
-    box-shadow: 0 0 7px 5px white;
-    background-color: rgba(0, 0, 0, .65);
+    @include alpha-background-color(rgba($color1, $light), $color2);
 }
 
 .time-box{
-    color: rgba(255, 255, 255, .65);
+    @include alpha-attribute('color', rgba($color4, $heavy), $color5);
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size: 24pt;
+    font-size: 24px;
     text-align: center;
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import './CyclerControl.css';
+import './CyclerControl.scss';
 import IconButton from '@material-ui/core/IconButton';
 import SvgIcon from '@material-ui/core/SvgIcon';
 import { PlayBackMode } from '../../../enumerations';

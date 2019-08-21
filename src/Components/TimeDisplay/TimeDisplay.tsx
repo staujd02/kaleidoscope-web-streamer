@@ -1,5 +1,5 @@
 import React from 'react';
-import './TimeDisplay.css';
+import './TimeDisplay.scss';
 import { Button } from '@material-ui/core';
 
 class TimeDisplay extends React.Component<TimeDisplayProps>{
