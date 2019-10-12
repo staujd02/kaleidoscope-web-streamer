@@ -1,5 +1,6 @@
 import React from 'react';
 import LoadScreen from '../LoadScreen/LoadScreen';
+import ConfigureButton from '../Configuration/ConfigureButton';
 
 class Loader extends React.Component<LoaderProps, LoaderState> {
 
@@ -19,11 +20,20 @@ class Loader extends React.Component<LoaderProps, LoaderState> {
 
     render(){
         const { doneLoading } = this.state;
-        return (
-            <div>
-                {doneLoading ? this.props.children : (<LoadScreen />)}
-            </div>
-        );
+        const { handleConfigureClick } = this.props;
+        if(doneLoading)
+            return (
+                <div>
+                    {this.props.children}
+                </div>
+            );
+        else
+            return (
+                <div>
+                    <LoadScreen />
+                    <ConfigureButton buttonClickHandler={handleConfigureClick} />
+                </div>
+            );
     }
 }
 

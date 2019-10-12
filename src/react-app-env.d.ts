@@ -4,6 +4,12 @@ interface StreamProps{
     source: Source
 }
 
+type ConfigureButtonProps = {
+    buttonClickHandler: ButtonClickHandler 
+}
+type ButtonClickHandler = (event: ButtonClickEvent) => void
+type ButtonClickEvent = React.MouseEvent<HTMLButtonElement, MouseEvent>
+
 interface Source {
     source: string
     title: string
@@ -30,6 +36,13 @@ interface CyclerControlProps {
 interface CyclerControlState {
 }
 
+type KaleidoscopeProps = {
+    loadTime: number
+}
+
+type KaleidoscopeState = {
+}
+
 interface CurtainProps {
     open: boolean
 }
@@ -39,6 +52,7 @@ interface CurtainState {
 
 interface LoaderProps {
     loadTime: number
+    handleConfigureClick: ButtonClickHandler
 }
 
 interface LoaderState {

@@ -7,6 +7,7 @@ exports[`The Loader renders correctly 1`] = `
     <img src=\\"kaleidoscope-2.svg\\" class=\\"App-logo\\" alt=\\"logo\\">
     <p>Starting Up The Streams...</p>
   </header>
+  <button>Configure Streams</button>
 </div>
 "
 `;

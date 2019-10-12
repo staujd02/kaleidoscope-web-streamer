@@ -7,11 +7,13 @@ describe('The Loader', () => {
     
     const element = <label>Yelp!</label>;
     const loadTime = 100;
-    let wrapper: ShallowWrapper<LoaderProps, LoaderState>;
+    let wrapper: ShallowWrapper<LoaderProps, LoaderState, Loader>;
+    let handleClick: jest.Mock;
 
     beforeEach(() => {
+        let handleClick = jest.fn();
         wrapper = shallow(
-            <Loader loadTime={loadTime}>
+            <Loader handleConfigureClick={handleClick} loadTime={loadTime}>
                 {element}
             </Loader>)
     });
@@ -27,7 +29,19 @@ describe('The Loader', () => {
         it("renders the loaded elements", () => {
             expect(wrapper.contains(element)).toEqual(true);
         });
+    });
 
+    describe('Given the configure button is still visible', () => {
+        describe('When the user click the config button', () => {
+            beforeEach(() => {
+                (wrapper.find('ConfigureButton').props() as  ConfigureButtonProps)
+                .buttonClickHandler({} as ButtonClickEvent);
+            });
+
+            it('reveals the triggers the props callback', () => {
+                expect(handleClick).toHaveBeenCalled();
+            }); 
+        });
     });
     
     describe("given the load time has not elapsed", () => {
