@@ -18,21 +18,16 @@ class Loader extends React.Component<LoaderProps, LoaderState> {
         });
     }
 
-    render(){
+    render() {
         const { doneLoading } = this.state;
         const { handleConfigureClick } = this.props;
-        if(doneLoading)
-            return (
-                <div>
-                    {this.props.children}
-                </div>
-            );
+        if (doneLoading)
+            return this.props.children;
         else
             return (
-                <div>
-                    <LoadScreen />
+                <LoadScreen>
                     <ConfigureButton buttonClickHandler={handleConfigureClick} />
-                </div>
+                </LoadScreen>
             );
     }
 }

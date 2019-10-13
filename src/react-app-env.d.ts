@@ -10,14 +10,8 @@ type ConfigureButtonProps = {
 type ButtonClickHandler = (event: ButtonClickEvent) => void
 type ButtonClickEvent = React.MouseEvent<HTMLButtonElement, MouseEvent>
 
-interface Source {
-    source: string
-    title: string
-}
-
 interface CyclerProps {
-    sourceList: Array<Source>
-    cycleTime: number
+    sourceList: Source[]
 }
 
 interface CyclerState {
@@ -41,6 +35,7 @@ type KaleidoscopeProps = {
 }
 
 type KaleidoscopeState = {
+    isConfiguring: boolean
 }
 
 interface CurtainProps {

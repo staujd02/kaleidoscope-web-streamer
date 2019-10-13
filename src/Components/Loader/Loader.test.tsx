@@ -11,9 +11,8 @@ describe('The Loader', () => {
     let handleClick: jest.Mock;
 
     beforeEach(() => {
-        let handleClick = jest.fn();
         wrapper = shallow(
-            <Loader handleConfigureClick={handleClick} loadTime={loadTime}>
+            <Loader handleConfigureClick={(handleClick = jest.fn())} loadTime={loadTime}>
                 {element}
             </Loader>)
     });
@@ -34,8 +33,8 @@ describe('The Loader', () => {
     describe('Given the configure button is still visible', () => {
         describe('When the user click the config button', () => {
             beforeEach(() => {
-                (wrapper.find('ConfigureButton').props() as  ConfigureButtonProps)
-                .buttonClickHandler({} as ButtonClickEvent);
+                (wrapper.find('ConfigureButton').prop('buttonClickHandler') as ButtonClickHandler)
+                ({} as ButtonClickEvent);
             });
 
             it('reveals the triggers the props callback', () => {

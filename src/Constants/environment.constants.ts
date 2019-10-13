@@ -1,10 +1,10 @@
 const TEN_MINUTES = "600000";
 const FIVE_SECONDS = "5000";
-const cycleTime = parseInt(process.env.REACT_APP_CYCLE_TIME || TEN_MINUTES);
-const loadTime = parseInt(process.env.REACT_APP_LOAD_TIME || FIVE_SECONDS);
-export{
-    TEN_MINUTES,
+const APP_CACHE_V1_KEY = "APP_CACHE_V1_KEY ";
+const LOAD_TIME = parseInt(process.env.REACT_APP_LOAD_TIME || FIVE_SECONDS);
+export {
+    APP_CACHE_V1_KEY,
     FIVE_SECONDS,
-    cycleTime,
-    loadTime
+    LOAD_TIME,
+    TEN_MINUTES,
 }

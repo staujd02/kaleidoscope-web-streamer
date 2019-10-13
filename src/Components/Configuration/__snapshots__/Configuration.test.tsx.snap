@@ -2,6 +2,8 @@
 
 exports[`The Configuration Component renders correctly 1`] = `
 "
-<div></div>
+<header class=\\"App-header\\">
+  <p>Setup the custom streams here...</p>
+</header>
 "
 `;

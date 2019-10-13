@@ -1,6 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`The Loader renders correctly 1`] = `
+exports[`The Kaleidoscope given the user is configuring the streams renders correctly 1`] = `
+"
+<header class=\\"App-header\\">
+  <p>Setup the custom streams here...</p>
+</header>
+"
+`;
+
+exports[`The Kaleidoscope renders correctly 1`] = `
 "
 <header class=\\"App-header\\">
   <img src=\\"kaleidoscope-2.svg\\" class=\\"App-logo\\" alt=\\"logo\\">

@@ -4,20 +4,20 @@ import { mount, ReactWrapper } from 'enzyme';
 import { formatHTML } from '../../TestUtilities/htmlFormatter';
 
 describe('The Cycler', () => {
-    
-    const SourceList = getSourceList() as Source[];
-    const cycleTime = 1500;
+
+    const SourceList: Source[] = getSourceList();
     const google = getSource1();
     const facebook = getSource2();
+    const cycleTime = 1500;
 
     let wrapper: ReactWrapper<CyclerProps, CyclerState>;
 
     beforeEach(() => {
-        wrapper = mount(<Cycler sourceList={SourceList} cycleTime={cycleTime} />)
+        wrapper = mount(<Cycler sourceList={SourceList} />)
     });
 
     it('renders correctly', () => expect(formatHTML(wrapper.html())).toMatchSnapshot());
-        
+
     it("doesn't have the cycler controls open by default", () => {
         expect((wrapper.instance().state as CyclerState).controlsVisible).toEqual(false);
     });
@@ -58,7 +58,7 @@ describe('The Cycler', () => {
             expect(wrapper.find('.cycler-controls').length).toEqual(1);
             expect((wrapper.instance().state as CyclerState).controlsVisible).toEqual(true);
         });
-    
+
         describe("when the time display is clicked again", () => {
 
             beforeEach(() =>
@@ -76,7 +76,7 @@ describe('The Cycler', () => {
             beforeEach(() => {
                 wrapper.find('#skip-control').first().simulate('click');
             });
-            
+
             it('cycles to the next stream', () => {
                 expect(
                     (wrapper.find('Stream')
@@ -90,14 +90,14 @@ describe('The Cycler', () => {
                 expect((wrapper.instance().state as CyclerState).controlsVisible).toEqual(false);
             });
         });
-        
+
         describe("when the playback button is clicked", () => {
 
             beforeEach(done => {
                 wrapper.find('#playback-control').first().simulate('click');
                 setTimeout(done, cycleTime + cycleTime / 2);
             });
-            
+
             it('pauses the stream', () => {
                 expect(
                     (wrapper.find('Stream')
@@ -111,13 +111,13 @@ describe('The Cycler', () => {
                 expect((wrapper.instance().state as CyclerState).controlsVisible).toEqual(false);
             });
         });
-        
+
         describe("when the skip button is clicked", () => {
 
             beforeEach(() => {
                 wrapper.find('#skip-control').first().simulate('click');
             });
-            
+
             it('cycles to the next stream', () => {
                 expect(
                     (wrapper.find('Stream')
@@ -135,7 +135,7 @@ describe('The Cycler', () => {
 
     describe("given the load time has elapsed", () => {
 
-        beforeEach(done => setTimeout(done, cycleTime + cycleTime/2))
+        beforeEach(done => setTimeout(done, cycleTime + cycleTime / 2))
 
         it('cycles to the next stream', () => {
             expect(
@@ -156,23 +156,35 @@ describe('The Cycler', () => {
     }
 
     function getSource1(): Source {
+        const cycleTime = 1500;
         return {
             source: "https://www.google.com",
-            title: "Google"
-        } as Source
+            title: "Google",
+            duration: cycleTime,
+            isEnabled: true,
+            sortOrder: 0
+        }
     }
 
     function getSource2(): Source {
+        const cycleTime = 1500;
         return {
             source: "https://www.facebook.com",
-            title: "Facebook"
+            title: "Facebook",
+            duration: cycleTime,
+            isEnabled: true,
+            sortOrder: 1
         }
     }
 
     function getSource3(): Source {
+        const cycleTime = 1500;
         return {
             source: "https://www.twitter.com",
-            title: "Twitter"
+            title: "Twitter",
+            duration: cycleTime,
+            isEnabled: true,
+            sortOrder: 1
         }
     }
 

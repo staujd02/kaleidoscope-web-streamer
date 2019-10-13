@@ -3,7 +3,7 @@
 exports[`The Cycler renders correctly 1`] = `
 "
 <div>
-  <iframe title=\\"Google\\" allow=\\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\\" src=\\"https://www.google.com\\">Your browser doesn't support iFrames.</iframe>
+  <iframe title=\\"Google\\" id=\\"player\\" allow=\\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\\" src=\\"https://www.google.com\\">Your browser doesn't support iFrames.</iframe>
   <button class=\\"MuiButtonBase-root MuiButton-root time-display MuiButton-text MuiButton-colorInherit\\" tabindex=\\"0\\" type=\\"button\\">
     <span class=\\"MuiButton-label\\">
       <div class=\\"time-box\\">00:01</div>

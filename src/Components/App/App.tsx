@@ -1,13 +1,13 @@
 import React from 'react';
-import './App.css';
-import { loadTime } from '../../Constants/environment.constants';
+import './App.scss';
+import { LOAD_TIME } from '../../Constants/environment.constants';
 import Kaleidoscope from '../Kaleidoscope/Kaleidoscope';
 
 const App: React.FC = () => {
   let reference = React.createRef() as React.RefObject<HTMLDivElement>;
   return (
     <div className="App" ref={reference} onClick={() => goFullScreen(reference)}>
-      <Kaleidoscope loadTime={loadTime} />
+      <Kaleidoscope loadTime={LOAD_TIME} />
     </div>
   );
 }

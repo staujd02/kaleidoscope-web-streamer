@@ -2,6 +2,8 @@
 
 exports[`The Load Screen renders correctly 1`] = `
 "
-<button>Configure Streams</button>
+<button class=\\"MuiButtonBase-root MuiButton-root configure-button MuiButton-text MuiButton-textPrimary\\" tabindex=\\"0\\" type=\\"button\\">
+  <span class=\\"MuiButton-label\\">Configure Streams</span>
+</button>
 "
 `;

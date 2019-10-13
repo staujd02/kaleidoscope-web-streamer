@@ -13,7 +13,7 @@ class Cycler extends React.Component<CyclerProps, CyclerState> {
         super(props);
         this.state = {
             activeSource: 0,
-            millisecondsRemaining: this.props.cycleTime,
+            millisecondsRemaining: this.props.sourceList[0].duration,
             controlsVisible: false,
             playbackPaused: false
         }
@@ -52,9 +52,10 @@ class Cycler extends React.Component<CyclerProps, CyclerState> {
     cycle = () => {
         const { activeSource } = this.state;
         const { sourceList } = this.props;
+        let nextSourceIndex = this.cycleIndex(activeSource, sourceList.length);
         this.setState({
-           activeSource: this.cycleIndex(activeSource, sourceList.length),
-           millisecondsRemaining: this.props.cycleTime
+           activeSource: nextSourceIndex,
+           millisecondsRemaining: this.props.sourceList[nextSourceIndex].duration
         });
     }
 
