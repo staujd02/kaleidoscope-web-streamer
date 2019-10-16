@@ -1,0 +1,23 @@
+@import '../../Assets/styling/mixins.scss';
+@import '../../Assets/styling/palette.scss';
+
+.title{
+   border-bottom: 1px $color4 solid;
+}
+
+.card{
+    flex-grow: 1;
+}
+
+.placeholder{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 75%;
+    font-style: italic;
+}
+
+.search{
+    max-height: 40px;
+    width: 100%;
+}

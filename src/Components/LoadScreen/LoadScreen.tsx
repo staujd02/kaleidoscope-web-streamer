@@ -1,6 +1,6 @@
 import React from 'react';
 import logo from '../../Assets/logos/kaleidoscope-2.svg';
-import AppHeader from '../AppHeader/AppHeader';
+import AppHeader from '../Headers/AppHeader';
 
 const LoadScreen: React.FC = props =>
     <AppHeader>
