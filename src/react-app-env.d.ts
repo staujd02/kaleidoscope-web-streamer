@@ -36,6 +36,7 @@ type KaleidoscopeProps = {
 
 type KaleidoscopeState = {
     isConfiguring: boolean
+    sourceRepository: SourceRepository
 }
 
 interface CurtainProps {
@@ -58,3 +59,17 @@ interface TimeDisplayProps{
     time: number
     onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void 
 }
+
+type StreamListCardProps = {
+    sourceList: Source[]
+}
+
+type ConfigurationProps = {
+    sourceRepo: SourceRepository
+}
+
+type StreamListState = {
+    selectedIndex: number
+}
+
+type StreamListProps = {}

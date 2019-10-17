@@ -5,12 +5,11 @@ import StreamPreview from './StreamPreview/StreamPreview';
 import ConfigurationHeader from '../Headers/ConfigurationHeader';
 import './Configuration.scss';
 
-export default class Configuration extends React.Component {
-
+export default class Configuration extends React.Component<ConfigurationProps> {
     render() {
         return (
             <ConfigurationHeader>
-                <StreamListCard />
+                <StreamListCard sourceList={this.props.sourceRepo.streams} />
                 <StreamDetails />
                 <StreamPreview />
             </ConfigurationHeader>

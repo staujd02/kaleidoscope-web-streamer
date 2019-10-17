@@ -5,7 +5,7 @@ import TextField from '@material-ui/core/TextField';
 import Typography from '@material-ui/core/Typography';
 import StreamList from './StreamList';
 
-export default class StreamListCard extends React.Component {
+export default class StreamListCard extends React.Component<StreamListCardProps> {
     render(){
         return (
             <Card className="card">

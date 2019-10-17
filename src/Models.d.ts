@@ -8,6 +8,6 @@ type Source = {
     sortOrder: number
 }
 
-type AppCacheV1 = {
-    sources: Source[]
-}
+type SourceRepository = {
+    streams: Source[]
+} 

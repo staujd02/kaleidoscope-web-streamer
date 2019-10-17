@@ -9,15 +9,22 @@ export default class Kaleidoscope extends React.Component<KaleidoscopeProps, Kal
     constructor(props: KaleidoscopeProps) {
         super(props);
         this.state = {
-            isConfiguring: false
+            isConfiguring: false,
+            sourceRepository: {
+                streams: []
+            }
         }
     }
 
+    componentDidMount(){
+
+    }
+
     render() {
-        const { isConfiguring } = this.state;
+        const { isConfiguring, sourceRepository } = this.state;
         return (
             <React.Fragment>
-                {isConfiguring && <Configuration />}
+                {isConfiguring && <Configuration sourceRepo={sourceRepository} />}
                 {!isConfiguring &&
                     <Loader loadTime={this.props.loadTime} handleConfigureClick={this.openConfiguration}>
                         <Cycler sourceList={SourceList}/>

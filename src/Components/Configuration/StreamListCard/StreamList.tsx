@@ -3,12 +3,6 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 
-type StreamListState = {
-    selectedIndex: number
-}
-
-type StreamListProps = {}
-
 export default class StreamList extends React.Component<StreamListProps, StreamListState> {
 
     constructor(props: StreamListProps){
