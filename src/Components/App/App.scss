@@ -21,31 +21,39 @@
   }
 }
 
-
-.App-header,
-.config-header {
-  background-color: #282c34;
+//.config-header
+.App-header {
   position: fixed;
+  display: flex;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
 }
 
-.config-header {
 
+.App-header {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #282c34;
+}
+
+.config-header {
+  background-color: $color4;
+}
+
+.config-container {
+  display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  align-items: stretch;
-  align-content: space-around;
+  align-items: center;
   background-color: $color4;
+  overflow: auto;
+  height: 100vh;
 
   & > div{
     height: 300px;

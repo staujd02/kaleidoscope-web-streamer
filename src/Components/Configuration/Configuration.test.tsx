@@ -7,10 +7,12 @@ describe('The Configuration Component', () => {
 
     let wrapper: ShallowWrapper<{}, {}, Configuration>
     let sourceRepository: SourceRepository
+    let handleSave: jest.Mock;
+    let doneConfiguring: jest.Mock;
 
     beforeEach(() => {
         sourceRepository = setupRepo(sourceRepository);
-        wrapper = shallow(<Configuration sourceRepo={sourceRepository} />);
+        wrapper = shallow(<Configuration handleSave={(handleSave = jest.fn())} doneConfiguring={(doneConfiguring = jest.fn())} sourceRepo={sourceRepository} />);
     });
 
     it('renders correctly', () => expect(formatHTML(wrapper.html())).toMatchSnapshot());

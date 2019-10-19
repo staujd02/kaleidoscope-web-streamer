@@ -1,5 +1,5 @@
 import React from 'react';
-import './Stream.css';
+import './Stream.scss';
 
 class Stream extends React.Component<StreamProps> {
 
