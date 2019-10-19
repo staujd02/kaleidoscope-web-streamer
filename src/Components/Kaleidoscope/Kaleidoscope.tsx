@@ -1,7 +1,6 @@
 import React from 'react';
 import Loader from '../Loader/Loader';
 import Cycler from '../Cycler/Cycler';
-import SourceList from '../../source-list.json';
 import Configuration from '../Configuration/Configuration';
 import SourceRepo from '../../LocalStorage/SourceRepo';
 
@@ -22,25 +21,37 @@ export default class Kaleidoscope extends React.Component<KaleidoscopeProps, Kal
             sourceRepository: SourceRepo.load() 
         });
     }
-
-    render() {
-        const { isConfiguring, sourceRepository } = this.state;
-        return (
-            <React.Fragment>
-                {isConfiguring && <Configuration sourceRepo={sourceRepository} />}
-                {!isConfiguring &&
-                    <Loader loadTime={this.props.loadTime} handleConfigureClick={this.openConfiguration}>
-                        <Cycler sourceList={SourceList}/>
-                    </Loader>
-                }
-            </React.Fragment>
-        );
-    }
-
+    
     openConfiguration = (event: ButtonClickEvent): void => {
         this.setState({
             isConfiguring: true
         });
     }
 
+    handleSave = (updatedSourceRepo: SourceRepository) => {
+        SourceRepo.save(updatedSourceRepo);
+        this.setState({
+            sourceRepository: updatedSourceRepo
+        });
+    }
+
+    doneConfiguringCallback = () => {
+        this.setState({
+            isConfiguring: false
+        });
+    }
+
+    render() {
+        const { isConfiguring, sourceRepository } = this.state;
+        return (
+            <React.Fragment>
+                {isConfiguring && <Configuration doneConfiguring={this.doneConfiguringCallback} sourceRepo={sourceRepository} handleSave={this.handleSave} />}
+                {!isConfiguring &&
+                    <Loader loadTime={this.props.loadTime} handleConfigureClick={this.openConfiguration}>
+                        <Cycler sourceList={sourceRepository.streams}/>
+                    </Loader>
+                }
+            </React.Fragment>
+        );
+    }
 }

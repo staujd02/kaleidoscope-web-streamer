@@ -66,6 +66,8 @@ type StreamListCardProps = {
 
 type ConfigurationProps = {
     sourceRepo: SourceRepository
+    handleSave: (updatedRepo: SourceRepository) => void
+    doneConfiguring: () => void
 }
 
 type StreamListState = {

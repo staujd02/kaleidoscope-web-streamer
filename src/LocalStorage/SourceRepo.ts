@@ -1,3 +1,6 @@
+import SourceList from '../source-list.json';
+import SourceRepositoryValidation from "../SchemaValidators/SourceRepository";
+
 const SourceRepoKey = "StreamRepoKey_v1";
 
 export default class SourceRepo {
@@ -9,14 +12,18 @@ export default class SourceRepo {
         return JSON.parse(repoString) as SourceRepository;
     }
 
-    public static save(streamRepository: SourceRepository){
-        let repoString = JSON.stringify(streamRepository);
+    public static save(sourceRepository: SourceRepository){
+        if(SourceRepositoryValidation.validate(sourceRepository)){
+            alert('Refused to save changes. The list of streams are not in a valid format.');
+            return;
+        }
+        let repoString = JSON.stringify(sourceRepository);
         localStorage.setItem(SourceRepoKey, repoString);
     }
 
     public static emptyRepo(): SourceRepository{
         return {
-            streams: []
+            streams: SourceList 
         }
     }
 
