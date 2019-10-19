@@ -3,6 +3,7 @@ import Loader from '../Loader/Loader';
 import Cycler from '../Cycler/Cycler';
 import SourceList from '../../source-list.json';
 import Configuration from '../Configuration/Configuration';
+import SourceRepo from '../../LocalStorage/SourceRepo';
 
 export default class Kaleidoscope extends React.Component<KaleidoscopeProps, KaleidoscopeState>{
 
@@ -17,7 +18,9 @@ export default class Kaleidoscope extends React.Component<KaleidoscopeProps, Kal
     }
 
     componentDidMount(){
-
+        this.setState({
+            sourceRepository: SourceRepo.load() 
+        });
     }
 
     render() {
