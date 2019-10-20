@@ -88,4 +88,7 @@ type SourceListState = {
     selectedIndex: number
 }
 
-type SourceListProps = {}
+type SourceListProps = {
+    sources: Source[]
+    handleSelectSource: (source: Source) => void
+}

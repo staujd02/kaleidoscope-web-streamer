@@ -20,7 +20,7 @@ export default class SourceListCard extends React.Component<SourceListCardProps>
                         margin="dense"
                         variant="outlined"
                     />
-                    <SourceList />
+                    <SourceList handleSelectSource={this.props.handleSelectSource} sources={this.props.sourceList}/>
                 </CardContent>
             </Card>
         );

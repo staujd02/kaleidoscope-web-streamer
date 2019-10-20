@@ -5,7 +5,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 
 export default class SourceList extends React.Component<SourceListProps, SourceListState> {
 
-    constructor(props: SourceListProps){
+    constructor(props: SourceListProps) {
         super(props);
         this.state = {
             selectedIndex: -1
@@ -14,22 +14,19 @@ export default class SourceList extends React.Component<SourceListProps, SourceL
 
     render() {
         const { selectedIndex } = this.state;
+        const sourceList = this.props.sources
+            .map((source, idx) => (
+                <ListItem
+                    key={idx}
+                    button
+                    selected={selectedIndex === idx}
+                    onClick={event => this.handleListItemClick(event, idx)} >
+                    <ListItemText primary={source.title} />
+                </ListItem>
+            ));
         return (
             <List aria-label="streams">
-                <ListItem
-                    button
-                    selected={selectedIndex === 2}
-                    onClick={event => this.handleListItemClick(event, 2)}
-                >
-                    <ListItemText primary="Trash" />
-                </ListItem>
-                <ListItem
-                    button
-                    selected={selectedIndex === 3}
-                    onClick={event => this.handleListItemClick(event, 3)}
-                >
-                    <ListItemText primary="Spam" />
-                </ListItem>
+                {sourceList}
             </List>
         );
     }
@@ -39,6 +36,7 @@ export default class SourceList extends React.Component<SourceListProps, SourceL
         this.setState({
             selectedIndex: index
         });
+        this.props.handleSelectSource(this.props.sources[index]);
     }
 
 }

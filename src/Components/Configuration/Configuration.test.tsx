@@ -30,6 +30,11 @@ describe('The Configuration Component', () => {
         expect(wrapper.find('SourceDetails').prop('source')).toEqual(wrapper.state().selectedSource);
     });
 
+    it('renders a button to restart the streams', () => {
+        (wrapper.find('.cycle').prop('onClick') as () => void)();
+        expect(doneConfiguring).toHaveBeenCalled();
+    });
+
     describe('when a user updates a source', () => {
 
         let updatedSource: Source;

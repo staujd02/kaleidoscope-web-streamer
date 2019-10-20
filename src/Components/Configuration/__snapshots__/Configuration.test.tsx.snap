@@ -24,12 +24,22 @@ exports[`The Configuration Component renders correctly 1`] = `
         <ul class=\\"MuiList-root MuiList-padding\\" aria-label=\\"streams\\">
           <div class=\\"MuiButtonBase-root MuiListItem-root MuiListItem-gutters MuiListItem-button\\" tabindex=\\"0\\" role=\\"button\\" aria-disabled=\\"false\\">
             <div class=\\"MuiListItemText-root\\">
-              <span class=\\"MuiTypography-root MuiListItemText-primary MuiTypography-body1\\">Trash</span>
+              <span class=\\"MuiTypography-root MuiListItemText-primary MuiTypography-body1\\">Source 1</span>
             </div>
           </div>
           <div class=\\"MuiButtonBase-root MuiListItem-root MuiListItem-gutters MuiListItem-button\\" tabindex=\\"0\\" role=\\"button\\" aria-disabled=\\"false\\">
             <div class=\\"MuiListItemText-root\\">
-              <span class=\\"MuiTypography-root MuiListItemText-primary MuiTypography-body1\\">Spam</span>
+              <span class=\\"MuiTypography-root MuiListItemText-primary MuiTypography-body1\\">Source 3</span>
+            </div>
+          </div>
+          <div class=\\"MuiButtonBase-root MuiListItem-root MuiListItem-gutters MuiListItem-button\\" tabindex=\\"0\\" role=\\"button\\" aria-disabled=\\"false\\">
+            <div class=\\"MuiListItemText-root\\">
+              <span class=\\"MuiTypography-root MuiListItemText-primary MuiTypography-body1\\">Source 2</span>
+            </div>
+          </div>
+          <div class=\\"MuiButtonBase-root MuiListItem-root MuiListItem-gutters MuiListItem-button\\" tabindex=\\"0\\" role=\\"button\\" aria-disabled=\\"false\\">
+            <div class=\\"MuiListItemText-root\\">
+              <span class=\\"MuiTypography-root MuiListItemText-primary MuiTypography-body1\\">Source 4</span>
             </div>
           </div>
         </ul>

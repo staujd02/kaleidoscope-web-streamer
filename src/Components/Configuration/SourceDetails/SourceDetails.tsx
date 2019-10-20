@@ -11,9 +11,14 @@ export default class SourceDetails extends React.Component<StreamDetailProps> {
                     <Typography className="title" color="textSecondary" gutterBottom>
                         Stream Details
                     </Typography>
-                    <Typography className="placeholder">
-                        Select a stream to view it's details.
-                    </Typography>
+                    {this.props.source === null &&
+                        <Typography className="placeholder">
+                            Select a stream to view it's details.
+                        </Typography>}
+                    {this.props.source !== null &&
+                        <Typography className="placeholder">
+                            {this.props.source.title}
+                        </Typography>}
                 </CardContent>
             </Card>
         );

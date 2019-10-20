@@ -24,12 +24,7 @@ exports[`The Kaleidoscope given the user is configuring the streams renders corr
         <ul class=\\"MuiList-root MuiList-padding\\" aria-label=\\"streams\\">
           <div class=\\"MuiButtonBase-root MuiListItem-root MuiListItem-gutters MuiListItem-button\\" tabindex=\\"0\\" role=\\"button\\" aria-disabled=\\"false\\">
             <div class=\\"MuiListItemText-root\\">
-              <span class=\\"MuiTypography-root MuiListItemText-primary MuiTypography-body1\\">Trash</span>
-            </div>
-          </div>
-          <div class=\\"MuiButtonBase-root MuiListItem-root MuiListItem-gutters MuiListItem-button\\" tabindex=\\"0\\" role=\\"button\\" aria-disabled=\\"false\\">
-            <div class=\\"MuiListItemText-root\\">
-              <span class=\\"MuiTypography-root MuiListItemText-primary MuiTypography-body1\\">Spam</span>
+              <span class=\\"MuiTypography-root MuiListItemText-primary MuiTypography-body1\\">Title 1</span>
             </div>
           </div>
         </ul>
