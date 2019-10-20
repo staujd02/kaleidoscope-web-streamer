@@ -14,13 +14,15 @@ describe('The Source Repository Validator', () => {
                     duration: 5000,
                     isEnabled: false,
                     source: 'www.somewhere.com',
-                    sortOrder: 3
+                    sortOrder: 3,
+                    key: 1
                 }
             ]
         }
     });
 
     it('should validate a correct repository', () => {
+        spyOn(SourceValidation, 'validate').and.returnValue(true);
         expect(SourceRepositoryValidation.validate(repoState)).toEqual(true);
     });
 

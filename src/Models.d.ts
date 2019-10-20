@@ -6,6 +6,7 @@ type Source = {
     duration: number
     isEnabled: boolean
     sortOrder: number
+    key: number
 }
 
 type SourceRepository = {

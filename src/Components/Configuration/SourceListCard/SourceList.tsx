@@ -3,9 +3,9 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 
-export default class StreamList extends React.Component<StreamListProps, StreamListState> {
+export default class SourceList extends React.Component<SourceListProps, SourceListState> {
 
-    constructor(props: StreamListProps){
+    constructor(props: SourceListProps){
         super(props);
         this.state = {
             selectedIndex: -1

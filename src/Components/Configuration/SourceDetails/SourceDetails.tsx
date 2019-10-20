@@ -3,7 +3,7 @@ import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 
-export default class StreamDetails extends React.Component {
+export default class SourceDetails extends React.Component<StreamDetailProps> {
     render() {
         return (
             <Card className="card">

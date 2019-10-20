@@ -2,45 +2,50 @@
 
 exports[`The Configuration Component renders correctly 1`] = `
 "
-<header class=\\"config-header\\">
-  <div class=\\"MuiPaper-root MuiPaper-elevation1 MuiCard-root card MuiPaper-rounded\\">
-    <div class=\\"MuiCardContent-root\\">
-      <p class=\\"MuiTypography-root title MuiTypography-body1 MuiTypography-colorTextSecondary MuiTypography-gutterBottom\\">List of the Streams</p>
-      <div class=\\"MuiFormControl-root MuiTextField-root search MuiFormControl-marginDense\\">
-        <label class=\\"MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-marginDense MuiInputLabel-outlined\\" data-shrink=\\"false\\" for=\\"outlined-dense\\">Search</label>
-        <div class=\\"MuiInputBase-root MuiOutlinedInput-root MuiInputBase-formControl MuiInputBase-marginDense MuiOutlinedInput-marginDense\\">
-          <input type=\\"text\\" aria-invalid=\\"false\\" class=\\"MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputMarginDense MuiOutlinedInput-inputMarginDense\\" id=\\"outlined-dense\\">
-          <fieldset aria-hidden=\\"true\\" style=\\"padding-left:8px\\" class=\\"PrivateNotchedOutline-root-117 MuiOutlinedInput-notchedOutline\\">
-            <legend class=\\"PrivateNotchedOutline-legend-118\\" style=\\"width:0.01px\\">
-              <span>​</span>
-            </legend>
-          </fieldset>
+<header class=\\"config-viewport\\">
+  <div class=\\"config-container\\">
+    <button class=\\"MuiButtonBase-root MuiButton-root cycle MuiButton-text\\" tabindex=\\"0\\" type=\\"button\\">
+      <span class=\\"MuiButton-label\\">Resume Cycle</span>
+    </button>
+    <div class=\\"MuiPaper-root MuiPaper-elevation1 MuiCard-root card MuiPaper-rounded\\">
+      <div class=\\"MuiCardContent-root\\">
+        <p class=\\"MuiTypography-root title MuiTypography-body1 MuiTypography-colorTextSecondary MuiTypography-gutterBottom\\">List of the Streams</p>
+        <div class=\\"MuiFormControl-root MuiTextField-root search MuiFormControl-marginDense\\">
+          <label class=\\"MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-marginDense MuiInputLabel-outlined\\" data-shrink=\\"false\\" for=\\"outlined-dense\\">Search</label>
+          <div class=\\"MuiInputBase-root MuiOutlinedInput-root MuiInputBase-formControl MuiInputBase-marginDense MuiOutlinedInput-marginDense\\">
+            <input type=\\"text\\" aria-invalid=\\"false\\" class=\\"MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputMarginDense MuiOutlinedInput-inputMarginDense\\" id=\\"outlined-dense\\">
+            <fieldset aria-hidden=\\"true\\" style=\\"padding-left:8px\\" class=\\"PrivateNotchedOutline-root-137 MuiOutlinedInput-notchedOutline\\">
+              <legend class=\\"PrivateNotchedOutline-legend-138\\" style=\\"width:0.01px\\">
+                <span>​</span>
+              </legend>
+            </fieldset>
+          </div>
         </div>
+        <ul class=\\"MuiList-root MuiList-padding\\" aria-label=\\"streams\\">
+          <div class=\\"MuiButtonBase-root MuiListItem-root MuiListItem-gutters MuiListItem-button\\" tabindex=\\"0\\" role=\\"button\\" aria-disabled=\\"false\\">
+            <div class=\\"MuiListItemText-root\\">
+              <span class=\\"MuiTypography-root MuiListItemText-primary MuiTypography-body1\\">Trash</span>
+            </div>
+          </div>
+          <div class=\\"MuiButtonBase-root MuiListItem-root MuiListItem-gutters MuiListItem-button\\" tabindex=\\"0\\" role=\\"button\\" aria-disabled=\\"false\\">
+            <div class=\\"MuiListItemText-root\\">
+              <span class=\\"MuiTypography-root MuiListItemText-primary MuiTypography-body1\\">Spam</span>
+            </div>
+          </div>
+        </ul>
       </div>
-      <ul class=\\"MuiList-root MuiList-padding\\" aria-label=\\"streams\\">
-        <div class=\\"MuiButtonBase-root MuiListItem-root MuiListItem-gutters MuiListItem-button\\" tabindex=\\"0\\" role=\\"button\\" aria-disabled=\\"false\\">
-          <div class=\\"MuiListItemText-root\\">
-            <span class=\\"MuiTypography-root MuiListItemText-primary MuiTypography-body1\\">Trash</span>
-          </div>
-        </div>
-        <div class=\\"MuiButtonBase-root MuiListItem-root MuiListItem-gutters MuiListItem-button\\" tabindex=\\"0\\" role=\\"button\\" aria-disabled=\\"false\\">
-          <div class=\\"MuiListItemText-root\\">
-            <span class=\\"MuiTypography-root MuiListItemText-primary MuiTypography-body1\\">Spam</span>
-          </div>
-        </div>
-      </ul>
     </div>
-  </div>
-  <div class=\\"MuiPaper-root MuiPaper-elevation1 MuiCard-root card MuiPaper-rounded\\">
-    <div class=\\"MuiCardContent-root\\">
-      <p class=\\"MuiTypography-root title MuiTypography-body1 MuiTypography-colorTextSecondary MuiTypography-gutterBottom\\">Stream Details</p>
-      <p class=\\"MuiTypography-root placeholder MuiTypography-body1\\">Select a stream to view it's details.</p>
+    <div class=\\"MuiPaper-root MuiPaper-elevation1 MuiCard-root card MuiPaper-rounded\\">
+      <div class=\\"MuiCardContent-root\\">
+        <p class=\\"MuiTypography-root title MuiTypography-body1 MuiTypography-colorTextSecondary MuiTypography-gutterBottom\\">Stream Details</p>
+        <p class=\\"MuiTypography-root placeholder MuiTypography-body1\\">Select a stream to view it's details.</p>
+      </div>
     </div>
-  </div>
-  <div class=\\"MuiPaper-root MuiPaper-elevation1 MuiCard-root card MuiPaper-rounded\\">
-    <div class=\\"MuiCardContent-root\\">
-      <p class=\\"MuiTypography-root title MuiTypography-body1 MuiTypography-colorTextSecondary MuiTypography-gutterBottom\\">Preview of the Stream</p>
-      <p class=\\"MuiTypography-root placeholder MuiTypography-body1\\">Select a stream to view a preview of it.</p>
+    <div class=\\"MuiPaper-root MuiPaper-elevation1 MuiCard-root card MuiPaper-rounded\\">
+      <div class=\\"MuiCardContent-root\\">
+        <p class=\\"MuiTypography-root title MuiTypography-body1 MuiTypography-colorTextSecondary MuiTypography-gutterBottom\\">Preview of the Stream</p>
+        <p class=\\"MuiTypography-root placeholder MuiTypography-body1\\">Select a stream to view a preview of it.</p>
+      </div>
     </div>
   </div>
 </header>

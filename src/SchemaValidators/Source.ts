@@ -28,7 +28,7 @@ export default class SourceValidation {
 
     private propertyValidation = (s: Source): void => {
         let keys: (keyof Source)[] = ["duration", "isEnabled",
-            "sortOrder", "source", "title"];
+            "sortOrder", "source", "title", "key"];
         keys.forEach(k => {
             if (s[k] === undefined)
                 this.passed = false;

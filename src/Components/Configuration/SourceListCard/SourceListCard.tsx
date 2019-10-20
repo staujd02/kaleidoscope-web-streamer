@@ -3,9 +3,9 @@ import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import TextField from '@material-ui/core/TextField';
 import Typography from '@material-ui/core/Typography';
-import StreamList from './StreamList';
+import SourceList from './SourceList';
 
-export default class StreamListCard extends React.Component<StreamListCardProps> {
+export default class SourceListCard extends React.Component<SourceListCardProps> {
     render(){
         return (
             <Card className="card">
@@ -20,7 +20,7 @@ export default class StreamListCard extends React.Component<StreamListCardProps>
                         margin="dense"
                         variant="outlined"
                     />
-                    <StreamList />
+                    <SourceList />
                 </CardContent>
             </Card>
         );

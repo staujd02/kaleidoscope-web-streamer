@@ -11,7 +11,8 @@ describe('The Source Validator', () => {
                 duration: 5000,
                 isEnabled: false,
                 source: 'www.somewhere.com',
-                sortOrder: 3
+                sortOrder: 3,
+                key: 1
             }
     });
 

@@ -4,48 +4,55 @@
         "title": "Live Stream of Osprey Nest",
         "duration": 600000,
         "isEnabled": true,
-        "sortOrder": 1
+        "sortOrder": 1,
+        "key": 1
     },
     {
         "source": "https://www.youtube.com/embed/szQSx4XYMoI",
         "title": "view of earth from space",
         "duration": 600000,
         "isEnabled": true,
-        "sortOrder": 1
+        "sortOrder": 1,
+        "key": 2
     },
     {
         "source": "https://www.youtube.com/embed/ZIC8QmBKRHc?autoplay=1",
         "title": "Live Stream of Manatees",
         "duration": 600000,
         "isEnabled": true,
-        "sortOrder": 1
+        "sortOrder": 1,
+        "key": 3
     },
     {
         "source": "https://www.youtube.com/embed/sDgWnw3YPjs?autoplay=1",
         "title": "Live Stream of Shark Infested Ocean",
         "duration": 600000,
         "isEnabled": true,
-        "sortOrder": 1
+        "sortOrder": 1,
+        "key": 4
     },
     {
         "source": "https://www.youtube.com/embed/HYknTgcw2BM?autoplay=1",
         "title": "Wrasse and Anthias Live Fish Camera",
         "duration": 600000,
         "isEnabled": true,
-        "sortOrder": 1
+        "sortOrder": 1,
+        "key": 5
     },
     {
         "source": "https://www.youtube.com/embed/F109TZt3nRc?autoplay=1",
         "title": "Tropical Reef Live Camera feed",
         "duration": 600000,
         "isEnabled": true,
-        "sortOrder": 1
+        "sortOrder": 1,
+        "key": 6
     },
     {
         "source": "https://www.youtube.com/embed/LvfaMv9nbJc?autoplay=1",
         "title": "Live Stream of a Shark Lagoon camera",
         "duration": 600000,
         "isEnabled": true,
-        "sortOrder": 1
+        "sortOrder": 1,
+        "key": 7
     }
 ]

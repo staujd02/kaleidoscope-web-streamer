@@ -60,8 +60,18 @@ interface TimeDisplayProps{
     onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void 
 }
 
-type StreamListCardProps = {
+type SourceListCardProps = {
     sourceList: Source[]
+    handleSelectSource: (s: Source) => void
+}
+
+type StreamDetailProps = {
+    handleUpdate: (source: Source) => void
+    source: Source | null
+}
+
+type StreamPreviewProps = {
+    source: Source | null
 }
 
 type ConfigurationProps = {
@@ -70,8 +80,12 @@ type ConfigurationProps = {
     doneConfiguring: () => void
 }
 
-type StreamListState = {
+type ConfigurationState = {
+    selectedSource: Source | null
+}
+
+type SourceListState = {
     selectedIndex: number
 }
 
-type StreamListProps = {}
+type SourceListProps = {}
