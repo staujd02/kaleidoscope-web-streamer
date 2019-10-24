@@ -72,6 +72,19 @@ describe('The Kaleidoscope', () => {
         });
     });
 
+    describe('given the user is watching the cycler', () => {
+        describe('when the user wants to see the menu', () => {
+
+            beforeEach(() => {
+                (wrapper.find('Cycler').prop('openMenuCallback') as () => void)();
+            });
+
+            it('displays the menu', () => {
+                expect(wrapper.state().isConfiguring).toEqual(true);
+            });
+        });
+    });
+
     describe('given the user is configuring the streams', () => {
         beforeEach(() => {
             wrapper.setState({

@@ -48,7 +48,7 @@ export default class Kaleidoscope extends React.Component<KaleidoscopeProps, Kal
                 {isConfiguring && <Configuration doneConfiguring={this.doneConfiguringCallback} sourceRepo={sourceRepository} handleSave={this.handleSave} />}
                 {!isConfiguring &&
                     <Loader loadTime={this.props.loadTime} handleConfigureClick={this.openConfiguration}>
-                        <Cycler sourceList={sourceRepository.streams}/>
+                        <Cycler openMenuCallback={this.openConfiguration} sourceList={sourceRepository.streams}/>
                     </Loader>
                 }
             </React.Fragment>

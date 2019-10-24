@@ -12,8 +12,10 @@ describe('The Cycler', () => {
 
     let wrapper: ReactWrapper<CyclerProps, CyclerState>;
 
+    let openMenuCallback: jest.Mock;
+
     beforeEach(() => {
-        wrapper = mount(<Cycler sourceList={SourceList} />)
+        wrapper = mount(<Cycler openMenuCallback={(openMenuCallback = jest.fn())} sourceList={SourceList} />)
     });
 
     it('renders correctly', () => expect(formatHTML(wrapper.html())).toMatchSnapshot());
@@ -65,7 +67,7 @@ describe('The Cycler', () => {
                 wrapper.find('TimeDisplay').simulate('click')
             );
 
-            it("opens the cycler controls", () => {
+            it("closes the cycler controls", () => {
                 expect((wrapper.instance().state as CyclerState).controlsVisible).toEqual(false);
             });
 
@@ -89,6 +91,18 @@ describe('The Cycler', () => {
             it('hides the controls', () => {
                 expect((wrapper.instance().state as CyclerState).controlsVisible).toEqual(false);
             });
+        });
+
+        describe('when the menu button is clicked', () => {
+            
+            beforeEach(() => {
+                wrapper.find('#menu-control').first().simulate('click');
+            });
+
+            it('calls the handler', () => {
+                expect(openMenuCallback).toHaveBeenCalled();
+            });
+            
         });
 
         describe("when the playback button is clicked", () => {
@@ -112,25 +126,6 @@ describe('The Cycler', () => {
             });
         });
 
-        describe("when the skip button is clicked", () => {
-
-            beforeEach(() => {
-                wrapper.find('#skip-control').first().simulate('click');
-            });
-
-            it('cycles to the next stream', () => {
-                expect(
-                    (wrapper.find('Stream')
-                        .getElement().props as StreamProps)
-                        .source
-                        .title
-                ).toEqual(facebook.title);
-            });
-
-            it('hides the controls', () => {
-                expect((wrapper.instance().state as CyclerState).controlsVisible).toEqual(false);
-            });
-        });
     });
 
     describe("given the load time has elapsed", () => {
@@ -162,7 +157,8 @@ describe('The Cycler', () => {
             title: "Google",
             duration: cycleTime,
             isEnabled: true,
-            sortOrder: 0
+            sortOrder: 0,
+            key: 1
         }
     }
 
@@ -173,7 +169,8 @@ describe('The Cycler', () => {
             title: "Facebook",
             duration: cycleTime,
             isEnabled: true,
-            sortOrder: 1
+            sortOrder: 1,
+            key: 2
         }
     }
 
@@ -184,7 +181,8 @@ describe('The Cycler', () => {
             title: "Twitter",
             duration: cycleTime,
             isEnabled: true,
-            sortOrder: 1
+            sortOrder: 1,
+            key: 3
         }
     }
 

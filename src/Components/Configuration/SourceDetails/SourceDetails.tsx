@@ -5,6 +5,7 @@ import Typography from '@material-ui/core/Typography';
 import Input from '@material-ui/core/Input';
 import Switch from '@material-ui/core/Switch';
 import TextField from '@material-ui/core/TextField';
+import InputLabel from '@material-ui/core/InputLabel';
 
 export default class SourceDetails extends React.Component<StreamDetailProps> {
     render() {
@@ -22,8 +23,10 @@ export default class SourceDetails extends React.Component<StreamDetailProps> {
                         <React.Fragment>
                             <TextField label="Source Name" type="text" value={this.props.source.title} />
                             <TextField label="URL" type="url" helperText="Must be embeddable" value={this.props.source.source} />
-                            <Input label="Duration" type="number" value={this.props.source.duration} />
-                            <Switch label="Enabled" type="button" checked={this.props.source.isEnabled} />
+                            <InputLabel>Duration</InputLabel>
+                            <Input type="number" value={this.props.source.duration} />
+                            <InputLabel>Enabled</InputLabel>
+                            <Switch type="button" checked={this.props.source.isEnabled} />
                         </React.Fragment>
                     )}
                 </CardContent>

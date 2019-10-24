@@ -7,15 +7,23 @@
     position: absolute;
     left: calc(50vw - 150px / 2);
     top: -25px;
-    padding-top: 65px;
-    height: 75px;
-    width: 165px;
+    padding-top: 60px;
+    padding-bottom: 15px;
+    height: 35px;
+    width: 190px;
     border-radius: 25px;
     display: flex;
     flex-wrap: nowrap;
     flex-direction: row;
     justify-content: center;
     align-items: flex-end;
+}
+
+#menu-control {
+    svg {
+        margin-left: -3px;
+        margin-top: -3px;
+    }
 }
 
 #cycler-controls button {
@@ -25,9 +33,17 @@
     flex: 1 1;
     color: $color2;
     border: none;
-    max-height: 50px;
-    max-width: 50px;
     border-radius: 50px;
     cursor: pointer;
-    margin: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+
+    svg {
+        overflow: visible;
+        max-height: 40px;
+        max-width: 40px;
+    }
 }

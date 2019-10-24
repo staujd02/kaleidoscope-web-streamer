@@ -12,6 +12,7 @@ type ButtonClickEvent = React.MouseEvent<HTMLButtonElement, MouseEvent>
 
 interface CyclerProps {
     sourceList: Source[]
+    openMenuCallback: ButtonClickHandler
 }
 
 interface CyclerState {
@@ -21,10 +22,12 @@ interface CyclerState {
     playbackPaused: boolean
 }
 
+
 interface CyclerControlProps {
     playBackMode: PlayBackMode
-    onSkip?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void 
-    onPlayBack?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void 
+    onSkip?: ButtonClickHandler
+    onPlayBack?: ButtonClickHandler 
+    onMenuOpen?: ButtonClickHandler 
 }
 
 interface CyclerControlState {
@@ -57,7 +60,7 @@ interface LoaderState {
 
 interface TimeDisplayProps{
     time: number
-    onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void 
+    onClick?: ButtonClickHandler
 }
 
 type SourceListCardProps = {

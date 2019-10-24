@@ -2,33 +2,54 @@
 
 exports[`The Cycler renders correctly 1`] = `
 "
-<div>
-  <iframe title=\\"Google\\" id=\\"player\\" allow=\\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\\" src=\\"https://www.google.com\\">Your browser doesn't support iFrames.</iframe>
-  <button class=\\"MuiButtonBase-root MuiButton-root time-display MuiButton-text MuiButton-colorInherit\\" tabindex=\\"0\\" type=\\"button\\">
-    <span class=\\"MuiButton-label\\">
-      <div class=\\"time-box\\">00:01</div>
-    </span>
-    <span class=\\"MuiTouchRipple-root\\"></span>
-  </button>
-  <div id=\\"cycler-controls\\" style=\\"visibility: hidden; webkit-transform: translateY(-0px); transform: translateY(-0px);\\">
-    <div class=\\"cycler-controls\\">
-      <button class=\\"MuiButtonBase-root MuiIconButton-root\\" tabindex=\\"0\\" type=\\"button\\" id=\\"skip-control\\" aria-label=\\"skip\\">
-        <span class=\\"MuiIconButton-label\\">
-          <svg class=\\"MuiSvgIcon-root\\" focusable=\\"false\\" viewBox=\\"0 0 48 48\\" aria-hidden=\\"true\\" role=\\"presentation\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"48\\" height=\\"48\\">
-            <path d=\\"M12 36l17-12-17-12v24zm20-24v24h4V12h-4z\\"></path>
-          </svg>
-        </span>
-        <span class=\\"MuiTouchRipple-root\\"></span>
-      </button>
-      <button class=\\"MuiButtonBase-root MuiIconButton-root\\" tabindex=\\"0\\" type=\\"button\\" id=\\"playback-control\\" aria-label=\\"Pause\\">
-        <span class=\\"MuiIconButton-label\\">
-          <svg class=\\"MuiSvgIcon-root\\" focusable=\\"false\\" viewBox=\\"0 0 48 48\\" aria-hidden=\\"true\\" role=\\"presentation\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"48\\" height=\\"48\\">
-            <path d=\\"M18 32h4V16h-4v16zm6-28C12.95 4 4 12.95 4 24s8.95 20 20 20 20-8.95 20-20S35.05 4 24 4zm0 36c-8.82 0-16-7.18-16-16S15.18 8 24 8s16 7.18 16 16-7.18 16-16 16zm2-8h4V16h-4v16z\\"></path>
-          </svg>
-        </span>
-        <span class=\\"MuiTouchRipple-root\\"></span>
-      </button>
-    </div>
+<iframe title=\\"Google\\" id=\\"player\\" allow=\\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\\" src=\\"https://www.google.com\\">Your browser doesn't support iFrames.</iframe>
+<button class=\\"MuiButtonBase-root MuiButton-root time-display MuiButton-text MuiButton-colorInherit\\" tabindex=\\"0\\" type=\\"button\\">
+  <span class=\\"MuiButton-label\\">
+    <div class=\\"time-box\\">00:01</div>
+  </span>
+  <span class=\\"MuiTouchRipple-root\\"></span>
+</button>
+<div id=\\"cycler-controls\\" style=\\"visibility: hidden; webkit-transform: translateY(-0px); transform: translateY(-0px);\\">
+  <div class=\\"cycler-controls\\">
+    <button class=\\"MuiButtonBase-root MuiIconButton-root\\" tabindex=\\"0\\" type=\\"button\\" id=\\"skip-control\\" aria-label=\\"skip\\">
+      <span class=\\"MuiIconButton-label\\">
+        <svg class=\\"MuiSvgIcon-root\\" focusable=\\"false\\" viewBox=\\"0 0 48 48\\" aria-hidden=\\"true\\" role=\\"presentation\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"48\\" height=\\"48\\">
+          <path d=\\"M12 36l17-12-17-12v24zm20-24v24h4V12h-4z\\"></path>
+        </svg>
+      </span>
+      <span class=\\"MuiTouchRipple-root\\"></span>
+    </button>
+    <button class=\\"MuiButtonBase-root MuiIconButton-root\\" tabindex=\\"0\\" type=\\"button\\" id=\\"playback-control\\" aria-label=\\"Pause\\">
+      <span class=\\"MuiIconButton-label\\">
+        <svg class=\\"MuiSvgIcon-root\\" focusable=\\"false\\" viewBox=\\"0 0 48 48\\" aria-hidden=\\"true\\" role=\\"presentation\\" xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"48\\" height=\\"48\\">
+          <path d=\\"M18 32h4V16h-4v16zm6-28C12.95 4 4 12.95 4 24s8.95 20 20 20 20-8.95 20-20S35.05 4 24 4zm0 36c-8.82 0-16-7.18-16-16S15.18 8 24 8s16 7.18 16 16-7.18 16-16 16zm2-8h4V16h-4v16z\\"></path>
+        </svg>
+      </span>
+      <span class=\\"MuiTouchRipple-root\\"></span>
+    </button>
+    <button class=\\"MuiButtonBase-root MuiIconButton-root\\" tabindex=\\"0\\" type=\\"button\\" id=\\"menu-control\\" aria-label=\\"open menu\\">
+      <span class=\\"MuiIconButton-label\\">
+        <svg class=\\"MuiSvgIcon-root\\" focusable=\\"false\\" viewBox=\\"0 0 48 48\\" aria-hidden=\\"true\\" role=\\"presentation\\" xmlns=\\"http://www.w3.org/1999/xlink\\" width=\\"48\\" height=\\"48\\" xml:space=\\"preserve\\">
+          <g>
+            <g>
+              <g>
+                <path d=\\"M45.225,125.972C20.284,125.972,0,146.256,0,171.191c0,24.94,20.284,45.219,45.225,45.219
+ c24.926,0,45.219-20.278,45.219-45.219C90.444,146.256,70.151,125.972,45.225,125.972z\\"></path>
+              </g>
+              <g>
+                <path d=\\"M173.409,125.972c-24.938,0-45.225,20.284-45.225,45.219c0,24.94,20.287,45.219,45.225,45.219
+ c24.936,0,45.226-20.278,45.226-45.219C218.635,146.256,198.345,125.972,173.409,125.972z\\"></path>
+              </g>
+              <g>
+                <path d=\\"M297.165,125.972c-24.932,0-45.222,20.284-45.222,45.219c0,24.94,20.29,45.219,45.222,45.219
+ c24.926,0,45.217-20.278,45.217-45.219C342.382,146.256,322.091,125.972,297.165,125.972z\\"></path>
+              </g>
+            </g>
+          </g>
+        </svg>
+      </span>
+      <span class=\\"MuiTouchRipple-root\\"></span>
+    </button>
   </div>
 </div>
 "

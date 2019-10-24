@@ -30,16 +30,17 @@ class Cycler extends React.Component<CyclerProps, CyclerState> {
             controlsVisible, playbackPaused } = this.state;
         let playbackMode = playbackPaused ? PlayBackMode.Play : PlayBackMode.Pause;
         return (
-            <div>
+            <>
                 <Stream source={this.getSource(activeSource)} />
                 <TimeDisplay onClick={this.timeClicked} 
                     time={millisecondsRemaining} />
                 <Curtain open={controlsVisible}>
                     <CyclerControl onSkip={this.onSkip}
                         playBackMode={playbackMode}
-                        onPlayBack={this.onPlayBack} />
+                        onPlayBack={this.onPlayBack}
+                        onMenuOpen={this.props.openMenuCallback} />
                 </Curtain>
-            </div>
+            </>
         );
     }
     
