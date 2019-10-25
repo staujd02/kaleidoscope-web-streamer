@@ -1,13 +1,13 @@
 import SourceValidation from "./Source";
+import MissingPropertyException from "../Exceptions/MissingPropertyException";
 
 export default class SourceRepositoryValidation {
 
-    public static validate(sourceRepositoryState: SourceRepository): boolean {
+    public static validate(sourceRepositoryState: SourceRepository): void {
         let validation = new SourceRepositoryValidation();
-        return validation.validateState(sourceRepositoryState);
+        validation.validateState(sourceRepositoryState);
     }
 
-    private passed: boolean;
     private constraints: ((s: SourceRepository) => void)[];
 
     constructor() {
@@ -15,27 +15,19 @@ export default class SourceRepositoryValidation {
             this.propertyValidation,
             this.streamValidation
         ];
-        this.passed = true;
     }
 
-    private validateState(sourceRepositoryState: SourceRepository): boolean {
-        for (let i = 0; i < this.constraints.length; i++) {
-            this.constraints[i](sourceRepositoryState);
-            if (!this.passed)
-                return false
-        }
-        return true;
+    private validateState(sourceRepositoryState: SourceRepository): void {
+        this.constraints.forEach(c => c(sourceRepositoryState));
     }
 
     private propertyValidation = (s: SourceRepository): void => {
         if (!s.streams)
-            this.passed = false;
+            throw new MissingPropertyException('streams');
+        
     }
 
     private streamValidation = (s: SourceRepository): void => {
-        s.streams.forEach(stream => {
-            if (!SourceValidation.validate(stream))
-                this.passed = false;
-        });
+        s.streams.forEach(stream => SourceValidation.validate(stream));
     }
 }

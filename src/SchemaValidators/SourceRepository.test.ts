@@ -22,8 +22,8 @@ describe('The Source Repository Validator', () => {
     });
 
     it('should validate a correct repository', () => {
-        spyOn(SourceValidation, 'validate').and.returnValue(true);
-        expect(SourceRepositoryValidation.validate(repoState)).toEqual(true);
+        spyOn(SourceValidation, 'validate').and.callFake(() => {});
+        expect(() => SourceRepositoryValidation.validate(repoState)).not.toThrowError();
     });
 
     describe('when given an invalid repository', () => {
@@ -35,18 +35,18 @@ describe('The Source Repository Validator', () => {
             });
 
             it('rejects it', () => {
-                expect(SourceRepositoryValidation.validate(repoState)).toEqual(false);
+                expect(() => SourceRepositoryValidation.validate(repoState)).toThrowErrorMatchingSnapshot();
             });
         });
         
         describe('given that repo has a stream that is invalid', () => {
 
             beforeEach(() => {
-                spyOn(SourceValidation, 'validate').and.returnValue(false);
+                spyOn(SourceValidation, 'validate').and.throwError("Fake my error");
             });
 
             it('rejects it', () => {
-                expect(SourceRepositoryValidation.validate(repoState)).toEqual(false);
+                expect(() => SourceRepositoryValidation.validate(repoState)).toThrowErrorMatchingSnapshot();
             });
         });
     });

@@ -17,7 +17,7 @@ describe('The Source Validator', () => {
     });
 
     it('should validate a correct source', () => {
-        expect(SourceValidation.validate(sourceState)).toEqual(true);
+        expect(() => SourceValidation.validate(sourceState)).not.toThrowError();
     });
 
     describe('when given an invalid source', () => {
@@ -28,7 +28,7 @@ describe('The Source Validator', () => {
             });
 
             it('rejects it', () => {
-                expect(SourceValidation.validate(sourceState)).toEqual(false);
+                expect(() => SourceValidation.validate(sourceState)).toThrowErrorMatchingSnapshot();
             });
         });
         
@@ -38,7 +38,7 @@ describe('The Source Validator', () => {
             });
 
             it('rejects it', () => {
-                expect(SourceValidation.validate(sourceState)).toEqual(false);
+                expect(() => SourceValidation.validate(sourceState)).toThrowErrorMatchingSnapshot();
             });
         });
 
@@ -48,7 +48,7 @@ describe('The Source Validator', () => {
             });
 
             it('rejects it', () => {
-                expect(SourceValidation.validate(sourceState)).toEqual(false);
+                expect(() => SourceValidation.validate(sourceState)).toThrowErrorMatchingSnapshot();
             });
         });
 
@@ -59,7 +59,7 @@ describe('The Source Validator', () => {
             });
 
             it('rejects it', () => {
-                expect(SourceValidation.validate(sourceState)).toEqual(false);
+                expect(() => SourceValidation.validate(sourceState)).toThrowErrorMatchingSnapshot();
             });
         });
 
@@ -70,7 +70,7 @@ describe('The Source Validator', () => {
             });
 
             it('rejects it', () => {
-                expect(SourceValidation.validate(sourceState)).toEqual(false);
+                expect(() => SourceValidation.validate(sourceState)).toThrowErrorMatchingSnapshot();
             });
         });
     });

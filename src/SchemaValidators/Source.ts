@@ -1,11 +1,14 @@
+import MissingPropertyException from "../Exceptions/MissingPropertyException";
+import DurationOutOfBoundsException from "../Exceptions/DurationOutOfBounds";
+import InvalidSortOrderException from "../Exceptions/InvalidSortOrderException";
+
 export default class SourceValidation {
 
-    public static validate(source: Source): boolean {
+    public static validate(source: Source): void {
         let validation = new SourceValidation();
-        return validation.validateState(source);
+        validation.validateState(source);
     }
 
-    private passed: boolean;
     private constraints: ((s: Source) => void)[];
 
     constructor() {
@@ -14,16 +17,10 @@ export default class SourceValidation {
             this.durationValidation,
             this.sortOrderValidation
         ];
-        this.passed = true;
     }
 
-    private validateState(sourceRepositoryState: Source): boolean {
-        for (let i = 0; i < this.constraints.length; i++) {
-            this.constraints[i](sourceRepositoryState);
-            if (!this.passed)
-                return false
-        }
-        return true;
+    private validateState(sourceRepositoryState: Source): void {
+        this.constraints.forEach(c => c(sourceRepositoryState))
     }
 
     private propertyValidation = (s: Source): void => {
@@ -31,17 +28,17 @@ export default class SourceValidation {
             "sortOrder", "source", "title", "key"];
         keys.forEach(k => {
             if (s[k] === undefined)
-                this.passed = false;
+                throw new MissingPropertyException(k);
         });
     }
 
     private durationValidation = (s: Source): void => {
         if (s.duration <= 0)
-            this.passed = false;
+            throw new DurationOutOfBoundsException(s.duration.toString());
     }
 
     private sortOrderValidation = (s: Source): void => {
         if (s.sortOrder < 0)
-            this.passed = false;
+            throw new InvalidSortOrderException(s.sortOrder.toString());
     }
 }

@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`The Source Repository Validator when given an invalid repository given that repo has a stream that is invalid rejects it 1`] = `"Fake my error"`;
+
+exports[`The Source Repository Validator when given an invalid repository given that repo is missing a stream list rejects it 1`] = `"Missing Property Exception: 'streams' is not defined"`;

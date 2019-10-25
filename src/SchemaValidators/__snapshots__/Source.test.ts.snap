@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`The Source Validator when given an invalid source given that the source is missing a stream duration rejects it 1`] = `"Missing Property Exception: 'duration' is not defined"`;
+
+exports[`The Source Validator when given an invalid source given that the source is missing a stream title rejects it 1`] = `"Missing Property Exception: 'title' is not defined"`;
+
+exports[`The Source Validator when given an invalid source given the duration is negative rejects it 1`] = `"Duration Out of Bounds: -110 is not a valid duration"`;
+
+exports[`The Source Validator when given an invalid source given the duration is zero rejects it 1`] = `"Duration Out of Bounds: 0 is not a valid duration"`;
+
+exports[`The Source Validator when given an invalid source given the sort order is negative rejects it 1`] = `"Invalid Sort Order Exception: -110 is not a valid sort order"`;
