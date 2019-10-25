@@ -9,6 +9,38 @@
     padding-top: 38px;
 }
 
+div.source-detail {
+
+    .MuiFormGroup-root {
+        &>div {
+            margin-top: 7px;
+        }
+
+        .beefy {
+            margin-top: 18px;
+            margin-bottom: 8px;
+        }
+
+    }
+
+    .MuiGrid-root {
+        display: inline-flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: baseline;
+
+        label {
+            flex: 1;
+            max-width: 70px;
+            text-align: left;
+        }
+
+        div {
+            flex: 1;
+        }
+    }
+}
+
 div.source-list {
     ul {
         border: 1px rgba($color1, $heavy) solid;

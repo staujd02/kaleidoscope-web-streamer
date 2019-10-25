@@ -13,8 +13,8 @@ const App: React.FC = () => {
 }
 
 const goFullScreen = (reference: React.RefObject<HTMLDivElement>): void => {
-  if (reference.current)
-    reference.current.requestFullscreen();
+  // if (reference.current)
+  //   reference.current.requestFullscreen();
 }
 
 export default App;

@@ -12,6 +12,14 @@
     }
 }
 
+@mixin slashed-background {
+    background: repeating-linear-gradient(45deg,
+            rgba($color1, $airy),
+            rgba($color1, $airy) 10px,
+            rgba($color1, $heavy) 10px,
+            rgba($color1, $heavy) 20px);
+}
+
 @mixin alpha-attribute($attribute, $color, $background) {
     $percent: alpha($color) * 100%;
     $opaque: opacify($color, 1);
