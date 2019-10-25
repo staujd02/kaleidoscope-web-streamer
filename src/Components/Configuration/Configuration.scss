@@ -1,15 +1,66 @@
 @import '../../Assets/styling/mixins.scss';
 @import '../../Assets/styling/palette.scss';
 
-.title{
-   border-bottom: 1px $color4 solid;
+.title {
+    border-bottom: 1px $color4 solid;
 }
 
-.card{
+.config-container {
+    padding-top: 38px;
+}
+
+div.source-list {
+    ul {
+        border: 1px rgba($color1, $heavy) solid;
+        max-height: 190px;
+        overflow: scroll;
+        padding-bottom: 0;
+        padding-top: 0;
+
+        .Mui-selected {
+            color: rgba($color4, $heavy);
+            background-color: rgba($color1, $heavy);
+
+            &:hover {
+                color: rgba($color1, $heavy);
+            }
+        }
+
+        &>div {
+            color: rgba($color1, $heavy);
+
+            &:active {
+                color: rgba($color3, $heavy);
+            }
+
+            &:hover {
+                color: rgba($color4, $heavy);
+                background-color: rgba($color1, $heavy);
+            }
+        }
+    }
+}
+
+button.resume-cycle {
+    @include alpha-background-color(rgba($color1, $heavy), $color2);
+
+    position: absolute;
+    top: 8px;
+    background-color: $color2;
+    color: $color4;
+
+    &:hover {
+        background-color: $color4;
+        color: $color2;
+        border: 1px solid $color2;
+    }
+}
+
+.card {
     flex-grow: 1;
 }
 
-.placeholder{
+.placeholder {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -17,7 +68,7 @@
     font-style: italic;
 }
 
-.search{
+.search {
     max-height: 40px;
     width: 100%;
 }

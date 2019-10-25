@@ -4,10 +4,10 @@ exports[`The Kaleidoscope given the user is configuring the streams renders corr
 "
 <header class=\\"config-viewport\\">
   <div class=\\"config-container\\">
-    <button class=\\"MuiButtonBase-root MuiButton-root cycle MuiButton-text\\" tabindex=\\"0\\" type=\\"button\\">
+    <button class=\\"MuiButtonBase-root MuiButton-root resume-cycle MuiButton-text\\" tabindex=\\"0\\" type=\\"button\\">
       <span class=\\"MuiButton-label\\">Resume Cycle</span>
     </button>
-    <div class=\\"MuiPaper-root MuiPaper-elevation1 MuiCard-root card MuiPaper-rounded\\">
+    <div class=\\"MuiPaper-root MuiPaper-elevation1 MuiCard-root card source-list MuiPaper-rounded\\">
       <div class=\\"MuiCardContent-root\\">
         <p class=\\"MuiTypography-root title MuiTypography-body1 MuiTypography-colorTextSecondary MuiTypography-gutterBottom\\">List of the Streams</p>
         <div class=\\"MuiFormControl-root MuiTextField-root search MuiFormControl-marginDense\\">
@@ -30,13 +30,13 @@ exports[`The Kaleidoscope given the user is configuring the streams renders corr
         </ul>
       </div>
     </div>
-    <div class=\\"MuiPaper-root MuiPaper-elevation1 MuiCard-root card MuiPaper-rounded\\">
+    <div class=\\"MuiPaper-root MuiPaper-elevation1 MuiCard-root card source-detail MuiPaper-rounded\\">
       <div class=\\"MuiCardContent-root\\">
         <p class=\\"MuiTypography-root title MuiTypography-body1 MuiTypography-colorTextSecondary MuiTypography-gutterBottom\\">Stream Details</p>
         <p class=\\"MuiTypography-root placeholder MuiTypography-body1\\">Select a stream to view it's details.</p>
       </div>
     </div>
-    <div class=\\"MuiPaper-root MuiPaper-elevation1 MuiCard-root card MuiPaper-rounded\\">
+    <div class=\\"MuiPaper-root MuiPaper-elevation1 MuiCard-root card stream-preview MuiPaper-rounded\\">
       <div class=\\"MuiCardContent-root\\">
         <p class=\\"MuiTypography-root title MuiTypography-body1 MuiTypography-colorTextSecondary MuiTypography-gutterBottom\\">Preview of the Stream</p>
         <p class=\\"MuiTypography-root placeholder MuiTypography-body1\\">Select a stream to view a preview of it.</p>

@@ -8,7 +8,7 @@ import SourceList from './SourceList';
 export default class SourceListCard extends React.Component<SourceListCardProps> {
     render(){
         return (
-            <Card className="card">
+            <Card className="card source-list">
                 <CardContent>
                     <Typography className="title" color="textSecondary" gutterBottom>
                         List of the Streams

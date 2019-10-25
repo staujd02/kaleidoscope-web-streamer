@@ -31,7 +31,7 @@ describe('The Configuration Component', () => {
     });
 
     it('renders a button to restart the streams', () => {
-        (wrapper.find('.cycle').prop('onClick') as () => void)();
+        (wrapper.find('.resume-cycle').prop('onClick') as () => void)();
         expect(doneConfiguring).toHaveBeenCalled();
     });
 

@@ -7,7 +7,7 @@ import Stream from '../../Stream/Stream';
 export default class StreamPreview extends React.Component<StreamPreviewProps> {
     render() {
         return (
-            <Card className="card">
+            <Card className="card stream-preview">
                 <CardContent>
                     <Typography className="title" color="textSecondary" gutterBottom>
                         Preview of the Stream

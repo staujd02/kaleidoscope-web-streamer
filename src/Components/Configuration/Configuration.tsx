@@ -37,7 +37,7 @@ export default class Configuration extends React.Component<ConfigurationProps, C
     render() {
         return (
             <ConfigurationHeader>
-                <Button onClick={this.props.doneConfiguring} className="cycle">Resume Cycle</Button>
+                <Button onClick={this.props.doneConfiguring} className="resume-cycle">Resume Cycle</Button>
                 <SourceListCard handleSelectSource={this.handleSelectSource} sourceList={this.props.sourceRepo.streams} />
                 <SourceDetails handleUpdate={this.handleUpdate} source={this.state.selectedSource}  />
                 <StreamPreview source={this.state.selectedSource} />

@@ -10,7 +10,7 @@ import InputLabel from '@material-ui/core/InputLabel';
 export default class SourceDetails extends React.Component<StreamDetailProps> {
     render() {
         return (
-            <Card className="card">
+            <Card className="card source-detail">
                 <CardContent>
                     <Typography className="title" color="textSecondary" gutterBottom>
                         Stream Details
