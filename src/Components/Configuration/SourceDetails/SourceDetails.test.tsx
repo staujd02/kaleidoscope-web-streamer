@@ -51,7 +51,7 @@ describe('The Source Detail Component', () => {
         beforeEach(() => {
             wrapper.find('#duration').simulate('change', {
                 target: {
-                    value: "5000",
+                    value: "5",
                     name: wrapper.find('#duration').prop('name')
                 }
             });

@@ -14,7 +14,11 @@ export default class SourceList extends React.Component<SourceListProps, SourceL
 
     render() {
         const { selectedIndex } = this.state;
+        const { search } = this.props;
         const sourceList = this.props.sources
+            .filter(source => search ? source.title.includes(search) 
+            || source.source.includes(search) : true)
+            .sort((a, b) => a.sortOrder - b.sortOrder)
             .map((source, idx) => (
                 <ListItem
                     key={idx}

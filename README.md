@@ -8,15 +8,17 @@ stream of live data
 - Detect when a stream is "down" (start with youtube inspecting the iframe elements)
 
 Features:
- - Search bar on list
+ - Add steam
+ - Re-order streams
+ - Add Link to example sources
+ - Add dropzone parser for youtube embeds
+ - Reset all streams to default button
 
 Fixes: 
- - Can't scroll to see all cards on mobile
- - Button over cards when scrolling
+ - ...
 
 Enhancements:
  - User not informed when invalid source details aren't saved
- - Pad Preview iframe
 
 ## Possible Streams to Use
 

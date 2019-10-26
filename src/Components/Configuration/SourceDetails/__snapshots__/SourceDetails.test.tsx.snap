@@ -21,8 +21,8 @@ exports[`The Source Detail Component renders correctly 1`] = `
       </div>
       <div class=\\"MuiGrid-root\\">
         <label class=\\"MuiFormLabel-root MuiInputLabel-root inline-lb MuiInputLabel-animated\\" id=\\"durationLabel\\">Duration</label>
-        <div class=\\"MuiInputBase-root MuiInput-root MuiInput-underline\\">
-          <input type=\\"number\\" class=\\"MuiInputBase-input MuiInput-input\\" id=\\"duration\\" name=\\"duration\\" value=\\"6000\\">
+        <div class=\\"MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-adornedEnd\\">
+          <input type=\\"number\\" class=\\"MuiInputBase-input MuiInput-input MuiInputBase-inputAdornedEnd\\" id=\\"duration\\" name=\\"duration\\" value=\\"6\\">Seconds
         </div>
       </div>
       <div class=\\"MuiGrid-root\\">

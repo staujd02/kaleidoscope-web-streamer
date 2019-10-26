@@ -5,8 +5,24 @@ import TextField from '@material-ui/core/TextField';
 import Typography from '@material-ui/core/Typography';
 import SourceList from './SourceList';
 
-export default class SourceListCard extends React.Component<SourceListCardProps> {
+export default class SourceListCard extends React.Component<SourceListCardProps, SourceListCardState> {
+
+    constructor(props: SourceListCardProps){
+        super(props);
+        this.state = {
+            search: ''
+        }
+    }
+
+    handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        this.setState({
+            search: e.target.value
+        });
+    }
+
     render(){
+        const { handleSelectSource, sourceList } = this.props;
+        const { search } = this.state;
         return (
             <Card className="card source-list">
                 <CardContent>
@@ -19,8 +35,9 @@ export default class SourceListCard extends React.Component<SourceListCardProps>
                         className="search"
                         margin="dense"
                         variant="outlined"
+                        onChange={this.handleChange}
                     />
-                    <SourceList handleSelectSource={this.props.handleSelectSource} sources={this.props.sourceList}/>
+                    <SourceList search={search} handleSelectSource={handleSelectSource} sources={sourceList}/>
                 </CardContent>
             </Card>
         );

@@ -27,6 +27,11 @@ export default class SourceDetails extends React.Component<SourceDetailsProps, S
             }), name);
     }
 
+    transformUp = (ratio: number) => (event: React.ChangeEvent<HTMLInputElement>) => {
+        event.target.value = (parseInt(event.target.value) * ratio).toString();
+        this.handleChange(event);
+    }
+
     handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = event.target;
         this.handleErrors(() =>
@@ -48,6 +53,7 @@ export default class SourceDetails extends React.Component<SourceDetailsProps, S
 
     render() {
         const { error } = this.state;
+        const conversionRatio = 1000;
         return (
             <Card className="card source-detail">
                 <CardContent>
@@ -60,15 +66,20 @@ export default class SourceDetails extends React.Component<SourceDetailsProps, S
                         </Typography>}
                     {this.props.source !== null && (
                         <FormGroup>
-                            <TextField name='title' label="Source Name" type="text" onChange={this.handleChange} value={this.props.source.title} />
-                            <TextField name='source' className="beefy" label="URL" onChange={this.handleChange} type="url" helperText="Must be embeddable" value={this.props.source.source} />
+                            <TextField name='title' label="Source Name" type="text" 
+                                onChange={this.handleChange} value={this.props.source.title} />
+                            <TextField name='source' className="beefy" label="URL" onChange={this.handleChange} 
+                                type="url" helperText="Must be embeddable" value={this.props.source.source} />
                             <Grid>
                                 <InputLabel id="durationLabel" error={error === 'duration'} className="inline-lb">Duration</InputLabel>
-                                <Input id="duration" name="duration" onChange={this.handleChange} type="number" value={this.props.source.duration} />
+                                <Input id="duration" endAdornment={'Seconds'} 
+                                    name="duration" onChange={this.transformUp(conversionRatio)} 
+                                    type="number" value={this.props.source.duration / conversionRatio} />
                             </Grid>
                             <Grid>
                                 <InputLabel className="inline-lb">Enabled</InputLabel>
-                                <Switch id="enable-toggle" name='isEnabled' onClick={this.handleToggle('isEnabled')} type="button" checked={this.props.source.isEnabled} />
+                                <Switch id="enable-toggle" name='isEnabled' onClick={this.handleToggle('isEnabled')}
+                                    type="button" checked={this.props.source.isEnabled} />
                             </Grid>
                         </FormGroup>
                     )}

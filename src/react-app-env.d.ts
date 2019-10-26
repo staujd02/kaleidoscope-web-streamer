@@ -68,6 +68,10 @@ type SourceListCardProps = {
     handleSelectSource: (s: Source) => void
 }
 
+type SourceListCardState = {
+    search: string
+}
+
 type SourceDetailsState = {
     error: string
 }
@@ -96,6 +100,7 @@ type SourceListState = {
 }
 
 type SourceListProps = {
+    search?: string
     sources: Source[]
     handleSelectSource: (source: Source) => void
 }
