@@ -1,12 +1,37 @@
 @import '../../Assets/styling/mixins.scss';
 @import '../../Assets/styling/palette.scss';
 
+$height-titlebar: 48px;
+
 .title {
     border-bottom: 1px $color4 solid;
 }
 
+.config-header {
+    background-color: $color4;
+}
+
 .config-container {
-    padding-top: 38px;
+    max-height: 100vh;
+    height: 100vh;
+    background-color: $color4;
+}
+.config-content {
+    height: 100vh;
+    max-height: calc(100vh + #{$height-titlebar});
+    padding-top: $height-titlebar;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+
+    &>div {
+        height: 300px;
+        width: 300px;
+        margin: 15px;
+    }
 }
 
 div.source-detail {
@@ -49,7 +74,7 @@ div.source-list {
         padding-bottom: 0;
         padding-top: 0;
 
-        .disabled{
+        .disabled {
             background-color: rgba($color3, $light);
         }
 
@@ -77,11 +102,21 @@ div.source-list {
     }
 }
 
-button.resume-cycle {
-    @include alpha-background-color(rgba($color1, $heavy), $color2);
-
+.config-titlebar{
+    @include alpha-background-color(rgba($color2, $light), $color2);
+    max-width: unset !important;
     position: absolute;
-    top: 8px;
+    top: 0;
+    height: $height-titlebar;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid $color2;
+    z-index: 1;
+}
+
+
+button.resume-cycle {
     background-color: $color2;
     color: $color4;
 

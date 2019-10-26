@@ -5,9 +5,18 @@ The goal of this project encompasses a simple, serverless, web-app that cycles t
 stream of live data
 
 ### TODOs
-- Copy streams and variables to local storage and create an editor
-- Extend the time display to allow for skipping and pausing of streams
 - Detect when a stream is "down" (start with youtube inspecting the iframe elements)
+
+Features:
+ - Search bar on list
+
+Fixes: 
+ - Can't scroll to see all cards on mobile
+ - Button over cards when scrolling
+
+Enhancements:
+ - User not informed when invalid source details aren't saved
+ - Pad Preview iframe
 
 ## Possible Streams to Use
 
