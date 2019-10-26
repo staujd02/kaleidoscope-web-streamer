@@ -37,7 +37,7 @@ exports[`The Configuration Component renders correctly 1`] = `
               <span class=\\"MuiTypography-root MuiListItemText-primary MuiTypography-body1\\">Source 2</span>
             </div>
           </div>
-          <div class=\\"MuiButtonBase-root MuiListItem-root MuiListItem-gutters MuiListItem-button\\" tabindex=\\"0\\" role=\\"button\\" aria-disabled=\\"false\\">
+          <div class=\\"MuiButtonBase-root MuiListItem-root disabled MuiListItem-gutters MuiListItem-button\\" tabindex=\\"0\\" role=\\"button\\" aria-disabled=\\"false\\">
             <div class=\\"MuiListItemText-root\\">
               <span class=\\"MuiTypography-root MuiListItemText-primary MuiTypography-body1\\">Source 4</span>
             </div>

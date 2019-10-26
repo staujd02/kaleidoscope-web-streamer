@@ -49,6 +49,10 @@ div.source-list {
         padding-bottom: 0;
         padding-top: 0;
 
+        .disabled{
+            background-color: rgba($color3, $light);
+        }
+
         .Mui-selected {
             color: rgba($color4, $heavy);
             background-color: rgba($color1, $heavy);

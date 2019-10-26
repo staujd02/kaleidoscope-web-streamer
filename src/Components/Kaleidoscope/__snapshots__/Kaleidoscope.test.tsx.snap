@@ -22,6 +22,21 @@ exports[`The Kaleidoscope given the user is configuring the streams renders corr
           </div>
         </div>
         <ul class=\\"MuiList-root MuiList-padding\\" aria-label=\\"streams\\">
+          <div class=\\"MuiButtonBase-root MuiListItem-root disabled MuiListItem-gutters MuiListItem-button\\" tabindex=\\"0\\" role=\\"button\\" aria-disabled=\\"false\\">
+            <div class=\\"MuiListItemText-root\\">
+              <span class=\\"MuiTypography-root MuiListItemText-primary MuiTypography-body1\\">Title 5</span>
+            </div>
+          </div>
+          <div class=\\"MuiButtonBase-root MuiListItem-root MuiListItem-gutters MuiListItem-button\\" tabindex=\\"0\\" role=\\"button\\" aria-disabled=\\"false\\">
+            <div class=\\"MuiListItemText-root\\">
+              <span class=\\"MuiTypography-root MuiListItemText-primary MuiTypography-body1\\">Title 2</span>
+            </div>
+          </div>
+          <div class=\\"MuiButtonBase-root MuiListItem-root MuiListItem-gutters MuiListItem-button\\" tabindex=\\"0\\" role=\\"button\\" aria-disabled=\\"false\\">
+            <div class=\\"MuiListItemText-root\\">
+              <span class=\\"MuiTypography-root MuiListItemText-primary MuiTypography-body1\\">Title 6</span>
+            </div>
+          </div>
           <div class=\\"MuiButtonBase-root MuiListItem-root MuiListItem-gutters MuiListItem-button\\" tabindex=\\"0\\" role=\\"button\\" aria-disabled=\\"false\\">
             <div class=\\"MuiListItemText-root\\">
               <span class=\\"MuiTypography-root MuiListItemText-primary MuiTypography-body1\\">Title 1</span>

@@ -146,7 +146,7 @@ describe('The Cycler', () => {
         return [
             getSource1(),
             getSource2(),
-            getSource3()
+            getSource3(),
         ];
     }
 
@@ -181,9 +181,8 @@ describe('The Cycler', () => {
             title: "Twitter",
             duration: cycleTime,
             isEnabled: true,
-            sortOrder: 1,
+            sortOrder: 2,
             key: 3
         }
     }
-
 });

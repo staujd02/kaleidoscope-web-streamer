@@ -16,12 +16,12 @@ export default class Kaleidoscope extends React.Component<KaleidoscopeProps, Kal
         }
     }
 
-    componentDidMount(){
+    componentDidMount() {
         this.setState({
-            sourceRepository: SourceRepo.load() 
+            sourceRepository: SourceRepo.load()
         });
     }
-    
+
     openConfiguration = (event: ButtonClickEvent): void => {
         this.setState({
             isConfiguring: true
@@ -43,12 +43,14 @@ export default class Kaleidoscope extends React.Component<KaleidoscopeProps, Kal
 
     render() {
         const { isConfiguring, sourceRepository } = this.state;
+        let sources = sourceRepository.streams.filter(s => s.isEnabled);
+        sources.sort((a, b) => a.sortOrder - b.sortOrder);
         return (
             <React.Fragment>
                 {isConfiguring && <Configuration doneConfiguring={this.doneConfiguringCallback} sourceRepo={sourceRepository} handleSave={this.handleSave} />}
                 {!isConfiguring &&
                     <Loader loadTime={this.props.loadTime} handleConfigureClick={this.openConfiguration}>
-                        <Cycler openMenuCallback={this.openConfiguration} sourceList={sourceRepository.streams}/>
+                        <Cycler openMenuCallback={this.openConfiguration} sourceList={sources} />
                     </Loader>
                 }
             </React.Fragment>

@@ -31,7 +31,11 @@ describe('The Kaleidoscope', () => {
             });
             spyOn(SourceRepo, 'save');
             data = getStreams();
-            data.streams.push(getStreams().streams[0]);
+            data.streams[0].isEnabled = true;
+            data.streams[0].sortOrder = 1;
+            data.streams[1].sortOrder = 2;
+            data.streams[2].sortOrder = 3;
+            data.streams[3].sortOrder = 4;
             wrapper.instance().handleSave(data);
         });
 
@@ -85,6 +89,16 @@ describe('The Kaleidoscope', () => {
         });
     });
 
+    describe('when handing off the streams to be displayed', () => {
+        it('filters off the disabled streams', () => {
+            expect((wrapper.find('Cycler').prop('sourceList') as Source[]).length).toEqual(3);
+        });
+        
+        it('respects the sort order on the elements', () => {
+            expect((wrapper.find('Cycler').prop('sourceList') as Source[])[2].sortOrder).toEqual(6);
+        });
+    });
+
     describe('given the user is configuring the streams', () => {
         beforeEach(() => {
             wrapper.setState({
@@ -110,12 +124,37 @@ describe('The Kaleidoscope', () => {
         return {
             streams: [
                 {
+                    title: 'Title 5',
+                    sortOrder: 5,
+                    source: "http5",
+                    isEnabled: false,
+                    duration: 50,
+                    key: 5,
+                },
+                {
+                    title: 'Title 2',
+                    sortOrder: 2,
+                    source: "http2",
+                    isEnabled: true,
+                    duration: 50,
+                    key: 2,
+                },
+                {
+                    title: 'Title 6',
+                    sortOrder: 6,
+                    source: "http6",
+                    isEnabled: true,
+                    duration: 50,
+                    key: 6,
+                },
+                {
                     title: 'Title 1',
                     sortOrder: 1,
                     source: "http1",
                     isEnabled: true,
-                    duration: 50
-                }
+                    duration: 50,
+                    key: 1,
+                },
             ]
         };
     }

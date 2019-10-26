@@ -19,6 +19,7 @@ export default class SourceList extends React.Component<SourceListProps, SourceL
                 <ListItem
                     key={idx}
                     button
+                    className={!source.isEnabled ? "disabled" : undefined}
                     selected={selectedIndex === idx}
                     onClick={event => this.handleListItemClick(event, idx)} >
                     <ListItemText primary={source.title} />

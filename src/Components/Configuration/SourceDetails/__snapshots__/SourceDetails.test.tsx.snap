@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`The Source Detail Component renders correctly 1`] = `
+"
+<div class=\\"MuiPaper-root MuiPaper-elevation1 MuiCard-root card source-detail MuiPaper-rounded\\">
+  <div class=\\"MuiCardContent-root\\">
+    <p class=\\"MuiTypography-root title MuiTypography-body1 MuiTypography-colorTextSecondary MuiTypography-gutterBottom\\">Stream Details</p>
+    <div class=\\"MuiFormGroup-root\\">
+      <div class=\\"MuiFormControl-root MuiTextField-root\\">
+        <label class=\\"MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiFormLabel-filled\\" data-shrink=\\"true\\">Source Name</label>
+        <div class=\\"MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-formControl MuiInput-formControl\\">
+          <input type=\\"text\\" aria-invalid=\\"false\\" class=\\"MuiInputBase-input MuiInput-input\\" name=\\"title\\" value=\\"The Best Source\\">
+        </div>
+      </div>
+      <div class=\\"MuiFormControl-root MuiTextField-root beefy\\">
+        <label class=\\"MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiFormLabel-filled\\" data-shrink=\\"true\\">URL</label>
+        <div class=\\"MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-formControl MuiInput-formControl\\">
+          <input type=\\"url\\" aria-invalid=\\"false\\" class=\\"MuiInputBase-input MuiInput-input\\" name=\\"source\\" value=\\"www.somewhere\\">
+        </div>
+        <p class=\\"MuiFormHelperText-root MuiFormHelperText-filled\\">Must be embeddable</p>
+      </div>
+      <div class=\\"MuiGrid-root\\">
+        <label class=\\"MuiFormLabel-root MuiInputLabel-root inline-lb MuiInputLabel-animated\\" id=\\"durationLabel\\">Duration</label>
+        <div class=\\"MuiInputBase-root MuiInput-root MuiInput-underline\\">
+          <input type=\\"number\\" class=\\"MuiInputBase-input MuiInput-input\\" id=\\"duration\\" name=\\"duration\\" value=\\"6000\\">
+        </div>
+      </div>
+      <div class=\\"MuiGrid-root\\">
+        <label class=\\"MuiFormLabel-root MuiInputLabel-root inline-lb MuiInputLabel-animated\\">Enabled</label>
+        <span class=\\"MuiSwitch-root\\">
+          <span class=\\"MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-239 MuiSwitch-switchBase MuiSwitch-colorSecondary PrivateSwitchBase-checked-240 Mui-checked\\" aria-disabled=\\"false\\">
+            <span class=\\"MuiIconButton-label\\">
+              <span class=\\"MuiSwitch-thumb\\"></span>
+              <input type=\\"button\\" checked=\\"\\" class=\\"PrivateSwitchBase-input-242 MuiSwitch-input\\" name=\\"isEnabled\\">
+            </span>
+          </span>
+          <span class=\\"MuiSwitch-track\\"></span>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+"
+`;

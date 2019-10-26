@@ -9,8 +9,45 @@ import InputLabel from '@material-ui/core/InputLabel';
 import FormGroup from '@material-ui/core/FormGroup';
 import Grid from '@material-ui/core/Grid';
 
-export default class SourceDetails extends React.Component<StreamDetailProps> {
+export default class SourceDetails extends React.Component<SourceDetailsProps, SourceDetailsState> {
+
+    constructor(props: SourceDetailsProps) {
+        super(props);
+        this.state = {
+            error: '',
+        }
+    }
+    
+    handleToggle = (name: string) => (event: any) => {
+        const { checked } = event.target;
+        this.handleErrors(() =>
+            this.props.handleUpdate({
+                ...this.props.source!,
+                [name]: !checked
+            }), name);
+    }
+
+    handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        const { name, value } = event.target;
+        this.handleErrors(() =>
+            this.props.handleUpdate({
+                ...this.props.source!,
+                [name]: value
+            }), name);
+    }
+
+    handleErrors = (call: () => void, optionalErrorState?: string) => {
+        try {
+            this.setState({ error: '' }, call);
+        } catch (ex) {
+            this.setState({
+                error: optionalErrorState ? optionalErrorState : ex
+            });
+        }
+    }
+
     render() {
+        const { error } = this.state;
         return (
             <Card className="card source-detail">
                 <CardContent>
@@ -23,15 +60,15 @@ export default class SourceDetails extends React.Component<StreamDetailProps> {
                         </Typography>}
                     {this.props.source !== null && (
                         <FormGroup>
-                            <TextField label="Source Name" type="text" value={this.props.source.title} />
-                            <TextField className="beefy" label="URL" type="url" helperText="Must be embeddable" value={this.props.source.source} />
+                            <TextField name='title' label="Source Name" type="text" onChange={this.handleChange} value={this.props.source.title} />
+                            <TextField name='source' className="beefy" label="URL" onChange={this.handleChange} type="url" helperText="Must be embeddable" value={this.props.source.source} />
                             <Grid>
-                                <InputLabel className="inline-lb">Duration</InputLabel>
-                                <Input type="number" value={this.props.source.duration} />
+                                <InputLabel id="durationLabel" error={error === 'duration'} className="inline-lb">Duration</InputLabel>
+                                <Input id="duration" name="duration" onChange={this.handleChange} type="number" value={this.props.source.duration} />
                             </Grid>
                             <Grid>
                                 <InputLabel className="inline-lb">Enabled</InputLabel>
-                                <Switch type="button" checked={this.props.source.isEnabled} />
+                                <Switch id="enable-toggle" name='isEnabled' onClick={this.handleToggle('isEnabled')} type="button" checked={this.props.source.isEnabled} />
                             </Grid>
                         </FormGroup>
                     )}

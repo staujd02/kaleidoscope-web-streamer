@@ -7,23 +7,24 @@ export default class SourceRepo {
 
     public static load(): SourceRepository {
         let repoString = localStorage.getItem(SourceRepoKey);
-        if(!repoString)
+        if (!repoString)
             return this.emptyRepo();
         return JSON.parse(repoString) as SourceRepository;
     }
 
-    public static save(sourceRepository: SourceRepository){
-        if(SourceRepositoryValidation.validate(sourceRepository)){
-            alert('Refused to save changes. The list of streams are not in a valid format.');
-            return;
+    public static save(sourceRepository: SourceRepository) {
+        try {
+            SourceRepositoryValidation.validate(sourceRepository)
+            let repoString = JSON.stringify(sourceRepository);
+            localStorage.setItem(SourceRepoKey, repoString);
+        } catch (error) {
+            console.log(error);
         }
-        let repoString = JSON.stringify(sourceRepository);
-        localStorage.setItem(SourceRepoKey, repoString);
     }
 
-    public static emptyRepo(): SourceRepository{
+    public static emptyRepo(): SourceRepository {
         return {
-            streams: SourceList 
+            streams: SourceList
         }
     }
 

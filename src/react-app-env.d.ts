@@ -68,7 +68,11 @@ type SourceListCardProps = {
     handleSelectSource: (s: Source) => void
 }
 
-type StreamDetailProps = {
+type SourceDetailsState = {
+    error: string
+}
+
+type SourceDetailsProps = {
     handleUpdate: (source: Source) => void
     source: Source | null
 }
@@ -84,7 +88,7 @@ type ConfigurationProps = {
 }
 
 type ConfigurationState = {
-    selectedSource: Source | null
+    selectedSource: number | null
 }
 
 type SourceListState = {

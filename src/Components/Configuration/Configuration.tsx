@@ -17,13 +17,13 @@ export default class Configuration extends React.Component<ConfigurationProps, C
 
     handleSelectSource = (s: Source) => {
         this.setState({
-            selectedSource: s
+            selectedSource: s.key
         });
     }
 
     handleUpdate = (s: Source) => {
         let found = this.props.sourceRepo.streams
-            .findIndex(source => source.sortOrder === s.sortOrder);
+            .findIndex(source => source.key === s.key);
         if(found >= 0){
             let copy = this.props.sourceRepo.streams;
             copy[found] = s;
@@ -35,12 +35,13 @@ export default class Configuration extends React.Component<ConfigurationProps, C
     }
 
     render() {
+        let source = this.props.sourceRepo.streams.find(s => s.key === this.state.selectedSource) || null;
         return (
             <ConfigurationHeader>
                 <Button onClick={this.props.doneConfiguring} className="resume-cycle">Resume Cycle</Button>
                 <SourceListCard handleSelectSource={this.handleSelectSource} sourceList={this.props.sourceRepo.streams} />
-                <SourceDetails handleUpdate={this.handleUpdate} source={this.state.selectedSource}  />
-                <StreamPreview source={this.state.selectedSource} />
+                <SourceDetails handleUpdate={this.handleUpdate} source={source} />
+                <StreamPreview source={source} />
             </ConfigurationHeader>
         );
     }
