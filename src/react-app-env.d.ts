@@ -74,6 +74,23 @@ type SourceListCardState = {
 
 type SourceDetailsState = {
     error: string
+    shock: boolean
+}
+
+type DetailUpdateEvent = (event: React.ChangeEvent<HTMLInputElement>) => void
+type SourceDurationProps = {
+    handleChange: DetailUpdateEvent
+    duration: number
+}
+type SourceURLProps = {
+    handleChange: DetailUpdateEvent
+    shock: boolean
+    url: string
+}
+type SourceTitleProps = {
+    handleChange: DetailUpdateEvent
+    shock: boolean
+    title: string
 }
 
 type SourceDetailsProps = {
