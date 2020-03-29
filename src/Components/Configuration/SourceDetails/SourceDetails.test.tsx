@@ -26,7 +26,7 @@ describe('The Source Detail Component', () => {
     });
 
     it('renders correctly', () => expect(formatHTML(wrapper.html())).toMatchSnapshot());
-    
+
     describe('given the user wants to make a change to a toggle button', () => {
 
         beforeEach(() => {
@@ -49,12 +49,7 @@ describe('The Source Detail Component', () => {
     describe('given the user makes a change', () => {
 
         beforeEach(() => {
-            wrapper.find('#duration').simulate('change', {
-                target: {
-                    value: "5",
-                    name: wrapper.find('#duration').prop('name')
-                }
-            });
+            fakeDurationCall("5");
         });
 
         it("saved through the parent's callback", () => {
@@ -73,12 +68,7 @@ describe('The Source Detail Component', () => {
                 handleUpdate.mockImplementation(() => {
                     throw new Error(exceptionMessage);
                 });
-                wrapper.find('#duration').simulate('change', {
-                    target: {
-                        value: "-5000",
-                        name: "duration"
-                    }
-                });
+                fakeDurationCall("-5000");
             });
 
             it('shows the user what went wrong', () => {
@@ -89,12 +79,7 @@ describe('The Source Detail Component', () => {
 
                 beforeEach(() => {
                     handleUpdate.mockImplementation(() => { });
-                    wrapper.find('#duration').simulate('change', {
-                        target: {
-                            value: "-5000",
-                            name: "duration"
-                        }
-                    });
+                    fakeDurationCall("-5000");
                 });
 
                 it("removes the old error's information", () => {
@@ -104,4 +89,13 @@ describe('The Source Detail Component', () => {
         });
     });
 
+    function fakeDurationCall(value: string) {
+        let f = wrapper.find('SourceDuration').prop('handleChange') as DetailUpdateEvent;
+        f({
+            target: {
+                value: value,
+                name: "duration"
+            }
+        } as React.ChangeEvent<HTMLInputElement>);
+    }
 });

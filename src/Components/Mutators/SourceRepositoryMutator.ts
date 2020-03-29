@@ -18,8 +18,8 @@ class SourceRepositoryMutator {
     delete(sourceRepo: SourceRepository, key: number | null): SourceRepository{
         return {
             ...sourceRepo,
-            streams: sourceRepo.streams.
-            filter(s => s.key !== key) 
+            streams: sourceRepo.streams
+                .filter(s => s.key !== key) 
         }
     }
 
