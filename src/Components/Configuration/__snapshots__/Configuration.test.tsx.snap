@@ -46,6 +46,7 @@ exports[`The Configuration Component renders correctly 1`] = `
               </div>
             </div>
           </ul>
+          <div></div>
         </div>
       </div>
       <div class=\\"MuiPaper-root MuiPaper-elevation1 MuiCard-root card source-detail MuiPaper-rounded\\">

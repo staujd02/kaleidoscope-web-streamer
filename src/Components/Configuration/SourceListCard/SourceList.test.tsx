@@ -25,7 +25,7 @@ describe('The Source List', () => {
         beforeEach(() => {
             wrapper.setProps({
                 search: '2'
-            })
+            });
         });
 
         it('renders correctly', () => expect(formatHTML(wrapper.html())).toMatchSnapshot());

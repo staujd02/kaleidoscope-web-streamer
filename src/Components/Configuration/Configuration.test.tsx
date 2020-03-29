@@ -35,6 +35,36 @@ describe('The Configuration Component', () => {
         expect(doneConfiguring).toHaveBeenCalled();
     });
 
+    describe('given there is an active source', () => {
+        describe('when a user deletes a source', () => {
+            it('remove the active source', () => {
+                wrapper.setState({ selectedSource: 1 });
+                wrapper.instance().deleteSelectedSource();
+                sourceRepository.streams = sourceRepository.streams.slice(1);
+                expect(props.handleSave)
+                    .toHaveBeenCalledWith(sourceRepository);
+            });
+        });
+    });
+
+    describe('when a user adds a source', () => {
+        it('adds a new source', () => {
+            wrapper.instance().addSource();
+            let streamsCopy = sourceRepository.streams.slice();
+            streamsCopy.push({
+                source: '',
+                title: 'New Stream',
+                isEnabled: false,
+                duration: 60,
+                sortOrder: 5,
+                key: 16
+            });
+            sourceRepository.streams = streamsCopy;
+            expect(props.handleSave)
+                .toHaveBeenCalledWith(sourceRepository);
+        });
+    });
+
     describe('when a user updates a source', () => {
 
         let updatedSource: Source;

@@ -4,6 +4,7 @@ import CardContent from '@material-ui/core/CardContent';
 import TextField from '@material-ui/core/TextField';
 import Typography from '@material-ui/core/Typography';
 import SourceList from './SourceList';
+import SourceControlRow from '../SourceControlList/SourceControlRow';
 
 export default class SourceListCard extends React.Component<SourceListCardProps, SourceListCardState> {
 
@@ -21,7 +22,7 @@ export default class SourceListCard extends React.Component<SourceListCardProps,
     }
 
     render(){
-        const { handleSelectSource, sourceList } = this.props;
+        const { handleSelectSource, addSource, deleteSource, sourceList } = this.props;
         const { search } = this.state;
         return (
             <Card className="card source-list">
@@ -38,6 +39,7 @@ export default class SourceListCard extends React.Component<SourceListCardProps,
                         onChange={this.handleChange}
                     />
                     <SourceList search={search} handleSelectSource={handleSelectSource} sources={sourceList}/>
+                    <SourceControlRow addSource={addSource} deleteSource={deleteSource} />
                 </CardContent>
             </Card>
         );

@@ -46,6 +46,7 @@ exports[`The Kaleidoscope given the user is configuring the streams renders corr
               </div>
             </div>
           </ul>
+          <div></div>
         </div>
       </div>
       <div class=\\"MuiPaper-root MuiPaper-elevation1 MuiCard-root card source-detail MuiPaper-rounded\\">

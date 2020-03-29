@@ -66,6 +66,13 @@ interface TimeDisplayProps{
 type SourceListCardProps = {
     sourceList: Source[]
     handleSelectSource: (s: Source) => void
+    addSource: () => void
+    deleteSource: () => void
+}
+
+type SourceControlRowProps = {
+    addSource: () => void
+    deleteSource: () => void
 }
 
 type SourceListCardState = {
