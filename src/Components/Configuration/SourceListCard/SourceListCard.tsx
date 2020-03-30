@@ -39,7 +39,12 @@ export default class SourceListCard extends React.Component<SourceListCardProps,
                         onChange={this.handleChange}
                     />
                     <SourceList search={search} handleSelectSource={handleSelectSource} sources={sourceList}/>
-                    <SourceControlRow addSource={addSource} deleteSource={deleteSource} />
+                    <SourceControlRow 
+                        sortUp={this.props.sortUp}
+                        sortDown={this.props.sortDown}
+                        sortDisable={this.props.sortDisabled}
+                        addSource={addSource} 
+                        deleteSource={deleteSource} />
                 </CardContent>
             </Card>
         );

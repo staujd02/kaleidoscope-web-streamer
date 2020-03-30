@@ -11,10 +11,10 @@ describe('The Source List', () => {
     let handleSelectSource: jest.Mock;
 
     beforeEach(() => {
-        props = {
+        let props = {
             handleSelectSource: (handleSelectSource = jest.fn()),
-            sources: getSources()
-        }
+            sources: getSources(),
+        };
         wrapper = shallow(<SourceList {...props} />);
     });
 

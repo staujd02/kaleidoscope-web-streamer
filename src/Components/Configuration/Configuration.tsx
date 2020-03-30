@@ -22,24 +22,43 @@ export default class Configuration extends React.Component<ConfigurationProps, C
             selectedSource: s.key
         });
     }
-
-    addSource = () => 
+    
+    sortDown = () => {
         this.props.handleSave(
-            SourceRepositoryMutator.add(this.props.sourceRepo)
-        );
+            SourceRepositoryMutator.sortDown(this.props.sourceRepo, this.state.selectedSource)
+        )
+    }
 
-    deleteSelectedSource = () => 
+    sortUp = () => {
+        this.props.handleSave(
+            SourceRepositoryMutator.sortUp(this.props.sourceRepo, this.state.selectedSource)
+        )
+    }
+
+    addSource = () => {
+        let s;
+        this.props.handleSave(
+            (s = SourceRepositoryMutator.add(this.props.sourceRepo))
+        );
+        this.setState({ selectedSource: s.streams[s.streams.length - 1].key });
+    }
+
+    deleteSelectedSource = () => {
         this.props.handleSave(
             SourceRepositoryMutator.delete(this.props.sourceRepo, this.state.selectedSource)
         );
+        this.setState({ selectedSource: null });
+    }
 
-    handleUpdate = (s: Source) => 
+    handleUpdate = (s: Source) =>
         this.props.handleSave(
             SourceRepositoryMutator.update(this.props.sourceRepo, s)
         );
 
     render() {
         let source = this.props.sourceRepo.streams.find(s => s.key === this.state.selectedSource) || null;
+        const sortUpDisabled = source === null ? true : !this.props.sourceRepo.streams.find(s => s.sortOrder < source!.sortOrder);
+        const sortDownDisabled = source === null ? true : !this.props.sourceRepo.streams.find(s => s.sortOrder > source!.sortOrder);
         return (
             <ConfigurationHeader>
                 <Container className="config-titlebar">
@@ -48,6 +67,9 @@ export default class Configuration extends React.Component<ConfigurationProps, C
                 <Container className="config-content">
                     <SourceListCard
                         handleSelectSource={this.handleSelectSource}
+                        sortUp={this.sortUp}
+                        sortDown={this.sortDown}
+                        sortDisabled={[sortUpDisabled, sortDownDisabled]}
                         addSource={this.addSource}
                         deleteSource={this.deleteSelectedSource}
                         sourceList={this.props.sourceRepo.streams} />

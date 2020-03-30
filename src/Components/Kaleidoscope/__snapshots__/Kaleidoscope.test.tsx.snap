@@ -46,7 +46,20 @@ exports[`The Kaleidoscope given the user is configuring the streams renders corr
               </div>
             </div>
           </ul>
-          <div></div>
+          <div class=\\"MuiContainer-root source-control MuiContainer-maxWidthLg\\">
+            <button class=\\"MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary\\" tabindex=\\"0\\" type=\\"button\\">
+              <span class=\\"MuiButton-label\\">Add</span>
+            </button>
+            <button class=\\"MuiButtonBase-root MuiButton-root MuiButton-text Mui-disabled Mui-disabled\\" tabindex=\\"-1\\" type=\\"button\\" disabled=\\"\\">
+              <span class=\\"MuiButton-label\\">Move Up</span>
+            </button>
+            <button class=\\"MuiButtonBase-root MuiButton-root MuiButton-text Mui-disabled Mui-disabled\\" tabindex=\\"-1\\" type=\\"button\\" disabled=\\"\\">
+              <span class=\\"MuiButton-label\\">Move Down</span>
+            </button>
+            <button class=\\"MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textSecondary\\" tabindex=\\"0\\" type=\\"button\\">
+              <span class=\\"MuiButton-label\\">Delete</span>
+            </button>
+          </div>
         </div>
       </div>
       <div class=\\"MuiPaper-root MuiPaper-elevation1 MuiCard-root card source-detail MuiPaper-rounded\\">

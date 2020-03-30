@@ -44,6 +44,12 @@ describe('The Configuration Component', () => {
                 expect(props.handleSave)
                     .toHaveBeenCalledWith(sourceRepository);
             });
+
+            it('sets the selected source to null', () => {
+                wrapper.setState({ selectedSource: 1 });
+                wrapper.instance().deleteSelectedSource();
+                expect(wrapper.state().selectedSource).toEqual(null);
+            });
         });
     });
 
@@ -62,6 +68,93 @@ describe('The Configuration Component', () => {
             sourceRepository.streams = streamsCopy;
             expect(props.handleSave)
                 .toHaveBeenCalledWith(sourceRepository);
+        });
+
+        it('selects that new source as the active source', () => {
+            wrapper.instance().addSource();
+            expect(wrapper.state().selectedSource).toEqual(16);
+        });
+    });
+
+    describe('given the selected sort is last', () => {
+        it('disables the sort up option', () => {
+            wrapper.setState({ selectedSource: 15 });
+            let d = wrapper.find('SourceListCard').prop('sortDisabled') as [boolean, boolean];
+            expect(d[1]).toBeTruthy();
+        });
+    });
+    
+    describe('given the selected sort is not last', () => {
+        it('disables the sort down option', () => {
+            wrapper.setState({ selectedSource: 1 });
+            let d = wrapper.find('SourceListCard').prop('sortDisabled') as [boolean, boolean];
+            expect(d[1]).toBeFalsy();
+        });
+    });
+
+    describe('given nothing is selected', () => {
+       it('disables all sorting', () => {
+            wrapper.setState({ selectedSource: null });
+            let d = wrapper.find('SourceListCard').prop('sortDisabled') as [boolean, boolean];
+            expect(d[0]).toBeTruthy();
+            expect(d[1]).toBeTruthy();
+       }); 
+    });
+    
+    describe('given the selected sort is not first', () => {
+        it('disables the sort up option', () => {
+            wrapper.setState({ selectedSource: 2 });
+            let d = wrapper.find('SourceListCard').prop('sortDisabled') as [boolean, boolean];
+            expect(d[0]).toBeFalsy();
+        });
+    });
+
+    describe('given nothing is selected', () => {
+       it('disables all sorting', () => {
+            wrapper.setState({ selectedSource: null });
+            let d = wrapper.find('SourceListCard').prop('sortDisabled') as [boolean, boolean];
+            expect(d[0]).toBeTruthy();
+            expect(d[1]).toBeTruthy();
+       }); 
+    });
+
+    describe('given the user has selected a source', () => {
+        describe('when the user sorts a stream down', () => {
+
+            beforeEach(() => {
+                wrapper.setState({ selectedSource: 1 });
+                wrapper.instance().sortDown();
+            });
+
+            it('updates the sort order of the selected stream', () => {
+                let expectedStream = sourceRepository.streams.find(s => s.key == 1);
+                expect(expectedStream!.sortOrder).toEqual(2);
+            });
+
+            it('updates the preceding sort order to take its place', () => {
+                let expectedStream = sourceRepository.streams.find(s => s.key == 2);
+                expect(expectedStream!.sortOrder).toEqual(1);
+            });
+        });
+    });
+
+    describe('given the user has selected a source', () => {
+        describe('when the user sorts a stream up', () => {
+
+            beforeEach(() => {
+                wrapper.setState({ selectedSource: 15 });
+                wrapper.instance().sortUp();
+            });
+
+            it('updates the sort order of the selected stream', () => {
+                let expectedStream = sourceRepository.streams.find(s => s.key == 15);
+                expect(expectedStream!.sortOrder).toEqual(3);
+            });
+
+            it('updates the preceding sort order to take its place', () => {
+                let expectedStream = sourceRepository.streams.find(s => s.key == 4);
+                expect(expectedStream!.sortOrder).toEqual(4);
+            });
         });
     });
 
