@@ -22,7 +22,7 @@ export default class SourceListCard extends React.Component<SourceListCardProps,
     }
 
     render(){
-        const { handleSelectSource, addSource, deleteSource, sourceList } = this.props;
+        const { handleSelectSource, addSource, deleteSource, sourceList, selectedIndex } = this.props;
         const { search } = this.state;
         return (
             <Card className="card source-list">
@@ -38,7 +38,11 @@ export default class SourceListCard extends React.Component<SourceListCardProps,
                         variant="outlined"
                         onChange={this.handleChange}
                     />
-                    <SourceList search={search} handleSelectSource={handleSelectSource} sources={sourceList}/>
+                    <SourceList 
+                        selectedIndex={selectedIndex}
+                        search={search} 
+                        handleSelectSource={handleSelectSource} 
+                        sources={sourceList}/>
                     <SourceControlRow 
                         sortUp={this.props.sortUp}
                         sortDown={this.props.sortDown}

@@ -74,6 +74,7 @@ type SourceListCardProps = {
     sortUp: () => void
     sortDown: () => void
     sortDisabled: SortDisableList
+    selectedIndex: number | null
 }
 
 type SourceControlRowProps = {
@@ -135,5 +136,6 @@ type SourceListState = {
 type SourceListProps = {
     search?: string
     sources: Source[]
+    selectedIndex: number | null
     handleSelectSource: (source: Source) => void
 }

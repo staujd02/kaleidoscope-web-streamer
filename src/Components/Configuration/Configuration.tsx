@@ -59,6 +59,7 @@ export default class Configuration extends React.Component<ConfigurationProps, C
         let source = this.props.sourceRepo.streams.find(s => s.key === this.state.selectedSource) || null;
         const sortUpDisabled = source === null ? true : !this.props.sourceRepo.streams.find(s => s.sortOrder < source!.sortOrder);
         const sortDownDisabled = source === null ? true : !this.props.sourceRepo.streams.find(s => s.sortOrder > source!.sortOrder);
+        const selectedIndex = this.state.selectedSource;
         return (
             <ConfigurationHeader>
                 <Container className="config-titlebar">
@@ -66,13 +67,14 @@ export default class Configuration extends React.Component<ConfigurationProps, C
                 </Container>
                 <Container className="config-content">
                     <SourceListCard
+                        selectedIndex={selectedIndex}
                         handleSelectSource={this.handleSelectSource}
                         sortUp={this.sortUp}
                         sortDown={this.sortDown}
                         sortDisabled={[sortUpDisabled, sortDownDisabled]}
                         addSource={this.addSource}
                         deleteSource={this.deleteSelectedSource}
-                        sourceList={this.props.sourceRepo.streams} />
+                        sourceList={this.props.sourceRepo.streams.sort((s1, s2) => s1.sortOrder - s2.sortOrder)} />
                     <SourceDetails handleUpdate={this.handleUpdate} source={source} />
                     <StreamPreview source={source} />
                 </Container>

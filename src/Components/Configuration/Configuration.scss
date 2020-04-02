@@ -29,7 +29,7 @@ $height-titlebar: 48px;
 
     &>div {
         height: 350px;
-        width: 300px;
+        width: 370px;
         margin: 15px;
     }
 }
@@ -77,6 +77,7 @@ div.source-list {
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
+        padding: 0;
     }
 
     ul {
