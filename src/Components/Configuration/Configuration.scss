@@ -28,8 +28,8 @@ $height-titlebar: 48px;
     align-items: center;
 
     &>div {
-        height: 300px;
-        width: 300px;
+        height: 350px;
+        width: 370px;
         margin: 15px;
     }
 }
@@ -51,7 +51,6 @@ div.source-detail {
         }
 
     }
-
     .MuiGrid-root {
         display: inline-flex;
         flex-direction: row;
@@ -71,6 +70,16 @@ div.source-detail {
 }
 
 div.source-list {
+
+    .source-control{
+        margin-top: 10px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0;
+    }
+
     ul {
         border: 1px rgba($color1, $heavy) solid;
         max-height: 190px;

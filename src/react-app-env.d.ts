@@ -63,16 +63,26 @@ interface TimeDisplayProps{
     onClick?: ButtonClickHandler
 }
 
+type SortUpDisabled = boolean
+type SortDownDisabled = boolean
+type SortDisableList = [SortUpDisabled, SortDownDisabled]
 type SourceListCardProps = {
     sourceList: Source[]
     handleSelectSource: (s: Source) => void
     addSource: () => void
     deleteSource: () => void
+    sortUp: () => void
+    sortDown: () => void
+    sortDisabled: SortDisableList
+    selectedIndex: number | null
 }
 
 type SourceControlRowProps = {
     addSource: () => void
     deleteSource: () => void
+    sortUp: () => void
+    sortDown: () => void
+    sortDisable: SortDisableList
 }
 
 type SourceListCardState = {
@@ -126,5 +136,6 @@ type SourceListState = {
 type SourceListProps = {
     search?: string
     sources: Source[]
+    selectedIndex: number | null
     handleSelectSource: (source: Source) => void
 }
