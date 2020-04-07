@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/kaleidoscope-web-streamer/static/css/main.423aeb96.chunk.css",
-    "main.js": "/kaleidoscope-web-streamer/static/js/main.0b9c2a41.chunk.js",
-    "main.js.map": "/kaleidoscope-web-streamer/static/js/main.0b9c2a41.chunk.js.map",
+    "main.css": "/kaleidoscope-web-streamer/static/css/main.28a4bbb2.chunk.css",
+    "main.js": "/kaleidoscope-web-streamer/static/js/main.1eb2c2ce.chunk.js",
+    "main.js.map": "/kaleidoscope-web-streamer/static/js/main.1eb2c2ce.chunk.js.map",
     "runtime~main.js": "/kaleidoscope-web-streamer/static/js/runtime~main.02944634.js",
     "runtime~main.js.map": "/kaleidoscope-web-streamer/static/js/runtime~main.02944634.js.map",
-    "static/js/2.ce7ce94b.chunk.js": "/kaleidoscope-web-streamer/static/js/2.ce7ce94b.chunk.js",
-    "static/js/2.ce7ce94b.chunk.js.map": "/kaleidoscope-web-streamer/static/js/2.ce7ce94b.chunk.js.map",
+    "static/js/2.d05049a2.chunk.js": "/kaleidoscope-web-streamer/static/js/2.d05049a2.chunk.js",
+    "static/js/2.d05049a2.chunk.js.map": "/kaleidoscope-web-streamer/static/js/2.d05049a2.chunk.js.map",
     "index.html": "/kaleidoscope-web-streamer/index.html",
-    "precache-manifest.bbbe3dc26d79921c3aaeb1f74ef4a57d.js": "/kaleidoscope-web-streamer/precache-manifest.bbbe3dc26d79921c3aaeb1f74ef4a57d.js",
+    "precache-manifest.dfd00e993ea18f373dd6eb8206a3ad4b.js": "/kaleidoscope-web-streamer/precache-manifest.dfd00e993ea18f373dd6eb8206a3ad4b.js",
     "service-worker.js": "/kaleidoscope-web-streamer/service-worker.js",
-    "static/css/main.423aeb96.chunk.css.map": "/kaleidoscope-web-streamer/static/css/main.423aeb96.chunk.css.map",
+    "static/css/main.28a4bbb2.chunk.css.map": "/kaleidoscope-web-streamer/static/css/main.28a4bbb2.chunk.css.map",
     "static/media/kaleidoscope-2.svg": "/kaleidoscope-web-streamer/static/media/kaleidoscope-2.69382820.svg"
   }
 }
