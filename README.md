@@ -9,6 +9,8 @@ Click on the timer in upper right hand corner to view the drop down control menu
 
 In the stream configuration, you have the ability to configure the source of the stream, order, and duration of a stream. The option to temporarly disable a stream is also an option.
 
+### Sample [list](https://github.com/staujd02/kaleidoscope-web-streamer/blob/master/sources/list.txt) of streams/overlays
+
 ## Using Embed Codes from Youtube.com
 
 A majority of live streams found on the internet are hosted on Youtube.com. As of 2023, the easiest way to setup a Youtube hosted livestream is to take the following steps.
